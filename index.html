@@ -14,18 +14,21 @@
             --tiktok-color: #25f4ee;
             --tiktok-pink: #fe2c55;
             --telegram-color: #0088cc;
+            --game-color: #2ecc71;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: var(--dark); color: var(--text); padding: 15px; padding-bottom: 40px; }
         .container { max-width: 480px; margin: 0 auto; }
         
-        /* စမ်းသပ်ကြော်ငြာ ကတ်ပြားများ */
+        /* ၁။ ဗီဒီယို ကြော်ငြာစနစ် ဒီဇိုင်း */
         .ad-section-title { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; }
-        .ad-slider { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
-        .ad-card { background: linear-gradient(135deg, #1e1e1e, #111111); border-left: 4px solid var(--accent); padding: 12px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); border-top: 1px solid #333; border-right: 1px solid #333; border-bottom: 1px solid #333; }
-        .ad-tag { font-size: 0.65rem; background: #333; color: var(--accent); padding: 2px 6px; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 6px; }
-        .ad-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 3px; }
-        .ad-card p { font-size: 0.8rem; color: #aaa; line-height: 1.4; }
+        .ad-slider { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
+        .ad-card { background: linear-gradient(135deg, #1e1e1e, #111111); border-left: 4px solid var(--accent); padding: 14px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); border: 1px solid #333; }
+        .ad-tag { font-size: 0.65rem; background: #333; color: var(--accent); padding: 2px 6px; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 8px; }
+        .ad-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 6px; }
+        .ad-card p { font-size: 0.8rem; color: #aaa; line-height: 1.4; margin-bottom: 10px; }
+        .ad-video-wrapper { width: 100%; height: 200px; border-radius: 8px; overflow: hidden; background: #000; border: 1px solid #444; }
+        .ad-video-wrapper iframe { width: 100%; height: 100%; border: none; }
 
         header { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #222; padding-bottom: 15px; }
         header h1 { color: #fff; font-size: 1.6rem; font-weight: 800; }
@@ -34,7 +37,7 @@
 
         .section-title { font-size: 1rem; color: var(--accent); margin: 25px 0 12px 0; border-left: 4px solid var(--primary); padding-left: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* အဆင့်မြင့် ယူကျုအကွက်ဒီဇိုင်းသစ် */
+        /* ၂။ YouTube ရွေးချယ်ခွင့်စနစ် (မတူညီသော ခလုတ် ၂ ခု) */
         .yt-banner-card { background: linear-gradient(135deg, #282828, #141414); border-radius: 16px; padding: 25px 15px; text-align: center; border: 1px solid #3a3a3a; box-shadow: 0 8px 16px rgba(0,0,0,0.6); margin-bottom: 20px; }
         .yt-logo-big { width: 75px; height: 75px; background-color: var(--primary); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); margin-bottom: 15px; cursor: pointer; transition: 0.3s; text-decoration: none; }
         .yt-logo-big:hover { transform: scale(1.1); }
@@ -46,7 +49,6 @@
         .track-card { background-color: var(--card-bg); border-radius: 16px; padding: 14px; margin-bottom: 18px; border: 1px solid #2a2a2a; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
         .player-wrapper { position: relative; width: 100%; height: 230px; border-radius: 12px; overflow: hidden; background: #000; }
         .player-wrapper iframe { width: 100%; height: 100%; border: none; }
-        
         .track-info { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; }
         .track-title { font-size: 0.95rem; font-weight: bold; color: #fff; }
         
@@ -56,35 +58,37 @@
         .btn-tt { background: linear-gradient(45deg, var(--tiktok-pink), var(--tiktok-color)); color: #000; font-weight: 800; }
         .btn:hover { transform: scale(1.03); }
 
-        /* ဆက်သွယ်ရန်အကွက် */
+        /* ၃။ ဂိမ်းကဏ္ဍ ဒီဇိုင်း (ဝဘ်ဆိုက်တွင်း ဆော့ရန် မြွေဂိမ်း) */
+        .game-card { background: #161616; border-radius: 16px; padding: 15px; border: 1px solid #333; text-align: center; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
+        #game-canvas { background: #000; border: 2px solid var(--game-color); border-radius: 8px; display: block; margin: 15px auto; max-width: 100%; }
+        .game-info { font-size: 0.9rem; color: #fff; font-weight: bold; margin-bottom: 10px; }
+        .game-controls { display: grid; grid-template-columns: repeat(3, 1fr); width: 150px; margin: 10px auto; gap: 5px; }
+        .ctrl-btn { background: #333; border: 1px solid #555; color: #fff; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; user-select: none; }
+        .ctrl-btn:active { background: var(--game-color); }
+        .btn-advanced-game { background-color: var(--game-color); box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3); width: 100%; justify-content: center; margin-top: 15px; padding: 12px; border-radius: 30px; font-size: 0.9rem; }
+
+        /* ဆက်သွယ်ရန်အကွက် (၄။ တရားဝင် Telegram ချိတ်ဆက်မှုအမှန်) */
         .contact-box { background: linear-gradient(180deg, #161616, #1a1a1a); border-radius: 16px; padding: 20px; text-align: center; border: 1px solid #333; margin-top: 35px; box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
         .contact-box p { font-size: 0.85rem; color: #bbb; line-height: 1.6; margin-bottom: 18px; }
-        
-        .btn-group { display: flex; flex-direction: column; gap: 10px; }
-        .contact-btn { padding: 12px; font-size: 0.9rem; border-radius: 30px; font-weight: bold; text-decoration: none; display: block; text-align: center; transition: 0.3s; }
-        
-        .cb-tt { background: linear-gradient(45deg, #000000, #222222); color: #fff; border: 1px solid var(--tiktok-color); }
-        .cb-tg { background-color: var(--telegram-color); color: #fff; box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3); }
-        .contact-btn:hover { transform: translateY(-2px); }
+        .cb-tg { background-color: var(--telegram-color); color: #fff; box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3); padding: 12px; font-size: 0.9rem; border-radius: 30px; font-weight: bold; text-decoration: none; display: block; text-align: center; transition: 0.3s; }
+        .cb-tg:hover { transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
 <div class="container">
     
-    <!-- စမ်းသပ်ကြော်ငြာကဏ္ဍ (မြန်မာ/နိုင်ငံခြား ညှပ်ထားပေးမှု) -->
+    <!-- ၁။ သက်ဝင်လှုပ်ရှားသော ဗီဒီယိုကြော်ငြာစနစ် -->
     <div class="ad-section-title">📢 Sponsored Ads (ကြော်ငြာကဏ္ဍ)</div>
     <div class="ad-slider">
-        <!-- ကြော်ငြာ ၁ (မြန်မာပြည်တွင်းလုပ်ငန်းပုံစံ - အစ်ကိုကြီးပြင်ဆင်ထားသောစာသား) -->
         <div class="ad-card">
             <span class="ad-tag">LOCAL AD</span>
             <h3>QR code စနစ်ဖြင့် အဆင့်မြင့်တက္ကစီနှင့် ကားအငှားဝန်ဆောင်မှု</h3>
             <p>ရန်ကုန်မြို့တွင်း/နယ်ဝေး ခရီးစဉ်များကို ဈေးနှုန်းသက်သာစွာဖြင့် စိတ်ချလုံခြုံစွာ ပို့ဆောင်ပေးပါသည်။ ကြော်ငြာထည့်သွင်းလိုပါက အောက်ပါအတိုင်း ချက်ချင်း ဆက်သွယ်နိုင်ပါသည် လုပ်ငန်းရှင်များအတွက် သတင်းကောင်း ပြောပါစေရှင့် smart card ID ပြုလုပ်ရန်နှင့် အခြားသော QR လမ်းခွင့်စားသောက်ဆိုင်အသုံးပြုစျေးနှုန်းချိုသာစွာဖြင့်ပြုလုပ်ရန် မှာယူလိုပါက ဤ Website အောက်ပါ t.me/Rlay234 ခလုပ်နှိပ်၍တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါသည်။</p>
-        </div>
-        <!-- ကြော်ငြာ ၂ (နိုင်ငံခြားနည်းပညာလုပ်ငန်းပုံစံ) -စျေးနှုန်းချိုသာစွာဖြင့်ဒီလိုပေးနေပှာယူလိုပါက        <div class="ad-card">
-            <span class="ad-tag">GLOBAL TECH</span>
-            <h3>Premium Music Streaming Pro</h3>
-            <p>ကမ္ဘာ့အဆင့်မီ အရည်အသွေးမြင့် တေးသီချင်းများကို ကြော်ငြာမပါဘဲ အနှောင့်အယှက်ကင်းကင်း နားဆင်လိုက်ပါ။ အထူးပရိုမိုးရှင်း ရှိပါသည်။</p>
+            <!-- ဗီဒီယိုကြော်ငြာစနစ် (နမူနာလှုပ်ရှားမှုဗီဒီယို ပြသခြင်း) -->
+            <div class="ad-video-wrapper">
+                <iframe src="https://www.tiktok.com/player/v1/7451996160533351698?music_info=0&description=0" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
@@ -93,21 +97,22 @@
         <p>မြန်မာ့အနုပညာ၊ တေးသီချင်းများနှင့် ဖျော်ဖြေရေးကဏ္ဍများ စုစည်းမှု</p>
     </header>
 
-    <!-- အသစ်မွမ်းမံထားသော YouTube Logo အကြီးစား ကဏ္ဍ -->
+    <!-- ၂။ YouTube ရွေးချယ်ခွင့်စနစ်သစ် (ခလုတ် ၂ ခု တာဝန်ခွဲခြားမှု) -->
     <div class="section-title">📺 Official YouTube Media Channel</div>
     <div class="yt-banner-card">
-        <a href="https://www.youtube.com/@RLay-n9m" target="_blank" class="yt-logo-big">
+        <!-- အပေါ်ခလုတ်အဝိုင်းကြီး - YouTube Trending (စိတ်ကြိုက်ရှာဖွေကြည့်ရှုရန် လွတ်လပ်ခွင့်) -->
+        <a href="https://www.youtube.com/feed/trending" target="_blank" class="yt-logo-big" title="YouTube Trending သို့ သွားရန်">
             <div class="yt-play-icon"></div>
         </a>
         <h2>R.Lay Official YouTube</h2>
-        <p>ကိုယ်ပိုင်ဖန်တီးမှု တေးသီချင်းဗီဒီယိုများကို YouTube တွင် တိုက်ရိုက်ကြည့်ရှုရန် နှိပ်ပါ။</p>
-        <a href="https://www.youtube.com/@RLay-n9m" target="_blank" class="btn btn-yt">📺 VISIT YOUTUBE</a>
+        <p>အပေါ်ခလုတ်သည် YouTube အသစ်များကို စိတ်ကြိုက်ကြည့်ရန်ဖြစ်ပြီး၊ အောက်ခလုတ်သည် R.Lay ချန်နယ်သို့ တိုက်ရိုက်သွားရန် ဖြစ်သည်။</p>
+        <!-- အောက်ခြေခလုတ် - အစ်ကိုကြီး၏ ကိုယ်ပိုင်ချန်နယ်သီးသန့် -->
+        <a href="https://www.youtube.com/@RLay-n9m" target="_blank" class="btn btn-yt">📺 VISIT MY CHANNEL</a>
     </div>
 
     <!-- ဦးစားပေး သီချင်းများကဏ္ဍ -->
     <div class="section-title">🔥 ဇကာတင် ဦးစားပေး တေးသီချင်းများ (MP3 / MP4)</div>
     
-    <!-- သီချင်း ၁ -->
     <div class="track-card">
         <div class="player-wrapper">
             <iframe src="https://www.tiktok.com/player/v1/7451996160533351698?music_info=1&description=1" allowfullscreen></iframe>
@@ -118,7 +123,6 @@
         </div>
     </div>
 
-    <!-- သီချင်း ၂ -->
     <div class="track-card">
         <div class="player-wrapper">
             <iframe src="https://www.tiktok.com/player/v1/7450125862364171521?music_info=1&description=1" allowfullscreen></iframe>
@@ -129,29 +133,101 @@
         </div>
     </div>
 
-    <!-- သီချင်း ၃ -->
-    <div class="track-card">
-        <div class="player-wrapper">
-            <iframe src="https://www.tiktok.com/player/v1/7450125433102372104?music_info=1&description=1" allowfullscreen></iframe>
+    <!-- ၃။ အပန်းဖြေဂိမ်းကဏ္ဍ (မြွေဂိမ်း တိုက်ရိုက်ဆော့ရန်နှင့် အဆင့်မြင့်ဂိမ်းလင့်ခ်) -->
+    <div class="section-title">🎮 Arcade & Gaming Zone</div>
+    <div class="game-card">
+        <div class="game-info">🐍 Classic Snake Game (ရမှတ်: <span id="score">0</span>)</div>
+        <canvas id="game-canvas" width="280" height="200"></canvas>
+        
+        <!-- ဖုန်းဖြင့်ဆော့ရလွယ်ကူစေရန် ထိန်းချုပ်ခလုတ်များ -->
+        <div class="game-controls">
+            <td></td><button class="ctrl-btn" onclick="changeDir('UP')">▲</button><td></td>
+            <button class="ctrl-btn" onclick="changeDir('LEFT')">◀</button>
+            <button class="ctrl-btn" onclick="resetGame()">🔄</button>
+            <button class="ctrl-btn" onclick="changeDir('RIGHT')">▶</button>
+            <td></td><button class="ctrl-btn" onclick="changeDir('DOWN')">▼</button><td></td>
         </div>
-        <div class="track-info">
-            <span class="track-title">🎵 Special Sound Track 03</span>
-            <a href="https://vt.tiktok.com/ZSX8J9EFq/" target="_blank" class="btn btn-tt">🎵 Play On TikTok</a>
-        </div>
+
+        <!-- အဆင့်မြင့် 3D ဂိမ်းပေါင်းစုံသို့ သွားမည့် ခလုတ်ကြီး -->
+        <a href="https://www.crazygames.com" target="_blank" class="btn btn-advanced-game">🎮 အဆင့်မြင့် 3D ဂိမ်းပေါင်း (၁၀၀) ကျော် ကစားရန်</a>
     </div>
 
-    <!-- ဆက်သွယ်ရန်ကဏ္ဍ (အချောသတ် စနစ်သစ်) -->
+    <!-- ၄။ ဆက်သွယ်ရန်ကဏ္ဍ (100% တရားဝင် အလုပ်လုပ်သော Telegram စနစ်) -->
     <div class="contact-box">
-        <p>မိမိတို့၏ တေးသီချင်းများနှင့် စီးပွားရေးကြော်ငြာများကို ဤဝဘ်ဆိုက်ပေါ်တွင် ထည့်သွင်းလိုပါက အောက်ပါ Chat လင့်ခ်များမှတစ်ဆင့် စာရိုက်၍ တိုက်ရိုက် ဆက်သွယ်စုံစမ်းနိုင်ပါသည် ခင်ဗျာ။</p>
-        
-        <div class="btn-group">
-            <!-- အမှားအယွင်းမရှိ ပရိုဖိုင်ပွင့်မည့် တရားဝင် TikTok Link -->
-            <a href="https://www.tiktok.com/@rlay315officialmusic" target="_blank" class="contact-btn cb-tt">💬 TikTok Profile မှ ဆက်သွယ်ရန်</a>
-            <!-- Telegram ခလုတ်အား အရောင်မှန်ကန်အောင် cb-tg ဟု ပြင်ဆင်ပြီးစီး -->
-            <a href="https://t.me/Rlay234" target="_blank" class="contact-btn cb-tg">💬 Telegram Chat မှ တိုက်ရိုက်စာပို့ရန်</a>
-        </div>
+        <p>မိမိတို့၏ တေးသီချင်းများနှင့် စီးပွားရေးကြော်ငြာများကို ဤဝဘ်ဆိုက်ပေါ်တွင် ထည့်သွင်းလိုပါက အောက်ပါ တရားဝင် Telegram Chat ခလုတ်မှတစ်ဆင့် စာရိုက်၍ တိုက်ရိုက် ဆက်သွယ်စုံစမ်းမှာယူနိုင်ပါသည် ခင်ဗျာ။</p>
+        <a href="https://t.me/Rlay234" target="_blank" class="cb-tg">💬 Telegram Chat မှ တိုက်ရိုက်စာပို့ရန်</a>
     </div>
 </div>
 
+<!-- မြွေဂိမ်းအလုပ်လုပ်စေရန် JavaScript စနစ် -->
+<script>
+    const canvas = document.getElementById("game-canvas");
+    const ctx = canvas.getContext("2d");
+    const box = 10;
+    let snake, food, d, score, game;
+
+    function resetGame() {
+        clearInterval(game);
+        snake = [{x: 14 * box, y: 10 * box}];
+        food = { x: Math.floor(Math.random() * 28) * box, y: Math.floor(Math.random() * 20) * box };
+        d = "RIGHT";
+        score = 0;
+        document.getElementById("score").innerText = score;
+        game = setInterval(draw, 120);
+    }
+
+    function changeDir(dir) { d = dir; }
+
+    function draw() {
+        ctx.fillStyle = "#000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < snake.length; i++) {
+            ctx.fillStyle = (i === 0) ? "#2ecc71" : "#27ae60";
+            ctx.fillRect(snake[i].x, snake[i].y, box, box);
+        }
+
+        ctx.fillStyle = "#ff0000";
+        ctx.fillRect(food.x, food.y, box, box);
+
+        let snakeX = snake[0].x;
+        let snakeY = snake[0].y;
+
+        if (d === "LEFT") snakeX -= box;
+        if (d === "UP") snakeY -= box;
+        if (d === "RIGHT") snakeX += box;
+        if (d === "DOWN") snakeY += box;
+
+        if (snakeX === food.x && snakeY === food.y) {
+            score++;
+            document.getElementById("score").innerText = score;
+            food = { x: Math.floor(Math.random() * 28) * box, y: Math.floor(Math.random() * 20) * box };
+        } else {
+            snake.pop();
+        }
+
+        let newHead = { x: snakeX, y: snakeY };
+
+        if (snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(newHead, snake)) {
+            clearInterval(game);
+            ctx.fillStyle = "#fff";
+            ctx.font = "16px Arial";
+            ctx.fillText("ဂိမ်းရှုံးသွားပါပြီ! 🔄 ကိုနှိပ်ပါ", 50, 100);
+            return;
+        }
+
+        snake.unshift(newHead);
+    }
+
+    function collision(head, array) {
+        for (let i = 0; i < array.length; i++) {
+            if (head.x === array[i].x && head.y === array[i].y) return true;
+        }
+        return false;
+    }
+
+    resetGame();
+</script>
+
 </body>
-            </တစ်ထုပြောပါစေရှင့်ပြောပါစေရှင့်
+</html>
