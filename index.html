@@ -3,90 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYANMAR MUSIC MENU - OFFICIAL WEBSITE</title>
+    <title>MYANMAR MUSIC MENU - OFFICIAL</title>
     <style>
         :root {
-            --primary: #e74c3c; 
-            --dark: #121212;
-            --card-bg: #1e1e1e;
+            --primary: #ff0000; 
+            --dark: #0f0f0f;
+            --card-bg: #1f1f1f;
             --text: #ffffff;
-            --accent: #f1c40f;
-            --tiktok: #00f2fe;
+            --accent: #ffcc00;
+            --tiktok: #25f4ee;
+            --tiktok-pink: #fe2c55;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--dark); color: var(--text); padding: 15px; }
-        .container { max-width: 500px; margin: 0 auto; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--dark); color: var(--text); padding: 15px; padding-bottom: 40px; }
+        .container { max-width: 480px; margin: 0 auto; }
         
-        /* ကြော်ငြာဘန်နာ */
-        .ad-banner { background: linear-gradient(135deg, #e74c3c, #f1c40f); padding: 15px; border-radius: 12px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: #000; font-weight: bold; }
-        .ad-banner h3 { font-size: 1.2rem; margin-bottom: 5px; }
-        .ad-banner p { font-size: 0.9rem; opacity: 0.9; }
+        /* ကြော်ငြာရှင်များအတွက် သီးသန့်နေရာလွတ် ကတ်ပြား */
+        .ad-space { background: linear-gradient(135deg, #2c3e50, #000000); border: 2px dashed var(--accent); padding: 18px; border-radius: 14px; text-align: center; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .ad-space h3 { font-size: 1.1rem; color: var(--accent); margin-bottom: 6px; letter-spacing: 1px; }
+        .ad-space p { font-size: 0.85rem; color: #bbb; }
 
-        header { text-align: center; margin-bottom: 25px; }
-        header h1 { color: #fff; font-size: 1.5rem; letter-spacing: 1px; }
+        header { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #222; padding-bottom: 15px; }
+        header h1 { color: #fff; font-size: 1.6rem; font-weight: 800; }
         header h1 span { color: var(--accent); }
-        header p { font-size: 0.85rem; color: #aaa; margin-top: 5px; }
+        header p { font-size: 0.85rem; color: #888; margin-top: 6px; }
 
-        .section-title { font-size: 1.1rem; color: var(--accent); margin: 25px 0 10px 0; border-left: 4px solid var(--primary); padding-left: 8px; }
+        .section-title { font-size: 1rem; color: var(--accent); margin: 25px 0 12px 0; border-left: 4px solid var(--primary); padding-left: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* TikTok သီချင်းကတ်ပြားများ */
-        .track-card { background-color: var(--card-bg); border-radius: 14px; padding: 12px; margin-bottom: 15px; border: 1px solid #2d2d2d; box-shadow: 0 4px 10px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 10px; }
-        .tiktok-embed-wrapper { position: relative; width: 100%; height: 220px; border-radius: 10px; overflow: hidden; background: #000; }
-        .tiktok-embed-wrapper iframe { width: 100%; height: 100%; border: none; }
+        /* အဆင့်မြင့် ဗီဒီယိုကတ်ပြားများ */
+        .track-card { background-color: var(--card-bg); border-radius: 16px; padding: 14px; margin-bottom: 18px; border: 1px solid #2a2a2a; box-shadow: 0 8px 16px rgba(0,0,0,0.5); transition: 0.3s; }
+        .player-wrapper { position: relative; width: 100%; height: 230px; border-radius: 12px; overflow: hidden; background: #000; box-shadow: inset 0 0 20px rgba(0,0,0,0.8); }
+        .player-wrapper iframe { width: 100%; height: 100%; border: none; }
         
-        .track-info { display: flex; justify-content: space-between; align-items: center; padding: 5px 2px; }
-        .track-title { font-size: 0.9rem; font-weight: bold; color: #fff; }
-        
-        /* ခလုတ်များ */
-        .btn { color: #fff; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s; }
-        .btn-yt { background-color: var(--primary); box-shadow: 0 4px 6px rgba(231,76,60,0.3); }
-        .btn-tt { background-color: #010101; border: 1px solid var(--tiktok); color: #fff; box-shadow: 0 4px 6px rgba(0, 242, 254, 0.2); }
+        .track-info { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; }
+        .track-title { font-size: 0.95rem; font-weight: bold; color: #fff; }
+        .live-indicator { font-size: 0.75rem; color: #2ecc71; display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+        .dot { width: 6px; height: 6px; background-color: #2ecc71; border-radius: 50%; display: inline-block; animation: blink 1.5s infinite; }
 
-        /* ဆက်သွယ်ရန် လမ်းညွှန်ချက် */
-        .contact-box { background-color: #1a1a1a; border-radius: 12px; padding: 18px; text-align: center; border: 1px dashed #444; margin-top: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .contact-box p { font-size: 0.85rem; color: #ccc; line-height: 1.6; }
-        .btn-group { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
-        .contact-btn { padding: 10px 15px; font-size: 0.85rem; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-block; flex: 1; text-align: center; }
-        .cb-tt { background-color: #010101; color: #fff; border: 1px solid var(--tiktok); }
-        .cb-yt { background-color: var(--primary); color: #fff; }
+        @keyframes blink { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
+        
+        /* ခလုတ်ဒီဇိုင်းများ */
+        .btn { color: #fff; border: none; padding: 10px 18px; border-radius: 25px; font-weight: bold; font-size: 0.8rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s; letter-spacing: 0.5px; }
+        .btn-yt { background-color: var(--primary); box-shadow: 0 4px 10px rgba(255,0,0,0.3); }
+        .btn-tt { background: linear-gradient(45deg, var(--tiktok-pink), var(--tiktok)); color: #000; font-weight: 800; box-shadow: 0 4px 10px rgba(37, 244, 238, 0.2); }
+        .btn:hover { transform: scale(1.03); }
+
+        /* ဆက်သွယ်ရန်အကွက် */
+        .contact-box { background: linear-gradient(180deg, #161616, #1a1a1a); border-radius: 16px; padding: 20px; text-align: center; border: 1px solid #333; margin-top: 35px; box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
+        .contact-box p { font-size: 0.85rem; color: #bbb; line-height: 1.6; margin-bottom: 15px; }
+        
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
+        .contact-btn { padding: 12px; font-size: 0.9rem; border-radius: 30px; font-weight: bold; text-decoration: none; display: block; text-align: center; transition: 0.3s; }
+        
+        /* TikTok App ကို တိုက်ရိုက်ဆွဲဖွင့်မည့် ခလုတ်စနစ် */
+        .cb-tt { background-color: #ffffff; color: #000000; border: 1px solid #fff; box-shadow: 0 4px 12px rgba(255,255,255,0.1); }
+        .cb-yt { background-color: #282828; color: #ff0000; border: 1px solid #333; }
+        .contact-btn:hover { transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- အပေါ်ဆုံးက ကြော်ငြာနေရာ -->
-    <div class="ad-banner">
+    
+    <!-- ကဏ္ဍသစ် - ကြော်ငြာရှင်များအတွက် နေရာလွတ်အသင့်ပြင်ထားမှု -->
+    <div class="ad-space">
         <h3>📢 MYANMAR DIGITAL MEDIA</h3>
-        <p>မြန်မာ့အနုပညာနှင့် နည်းပညာဝန်ဆောင်မှုများ စုစည်းမှု</p>
+        <p>ဤနေရာတွင် မိမိတို့၏ စီးပွားရေးကြော်ငြာများကို ထည့်သွင်းနိုင်ပါပြီ</p>
     </div>
 
     <header>
         <h1>🎬 MYANMAR <span>MUSIC MENU</span> 🎵</h1>
-        <p>ဖန်တီးမှုအသစ် တေးသီချင်းများနှင့် အသုံးဝင်သော ဖျော်ဖြေရေးကဏ္ဍများ</p>
+        <p>မြန်မာ့အနုပညာ၊ တေးသီချင်းများနှင့် ဖျော်ဖြေရေးကဏ္ဍများ စုစည်းမှု</p>
     </header>
 
-    <!-- YouTube Channel အပိုင်း -->
+    <!-- YouTube Channel ကဏ္ဍ -->
     <div class="section-title">📺 Official Media Channel (Auto-Update)</div>
-    <div class="track-card" style="margin-bottom: 25px;">
-        <div class="tiktok-embed-wrapper" style="height: 180px;">
-            <!-- အစ်ကိုကြီးရဲ့ YouTube Upload များကို ချိတ်ဆက်ထားသည် -->
+    <div class="track-card">
+        <div class="player-wrapper" style="height: 200px;">
             <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=RLay-n9m" allowfullscreen></iframe>
         </div>
         <div class="track-info">
             <div>
                 <div class="track-title">🎵 Official YouTube Feed</div>
-                <p style="font-size: 0.75rem; color: #2ecc71; margin-top: 2px;">● Live Streaming</p>
+                <div class="live-indicator"><span class="dot"></span> Live Streaming</div>
             </div>
             <a href="https://www.youtube.com/@RLay-n9m" target="_blank" class="btn btn-yt">📺 VISIT YOUTUBE</a>
         </div>
     </div>
 
-    <!-- ဦးစားပေး သီချင်းများအပိုင်း -->
+    <!-- ဦးစားပေး သီချင်းများကဏ္ဍ -->
     <div class="section-title">🔥 ဇကာတင် ဦးစားပေး တေးသီချင်းများ (MP3 / MP4)</div>
     
     <!-- သီချင်း ၁ -->
     <div class="track-card">
-        <div class="tiktok-embed-wrapper">
+        <div class="player-wrapper">
             <iframe src="https://www.tiktok.com/player/v1/7451996160533351698?music_info=1&description=1" allowfullscreen></iframe>
         </div>
         <div class="track-info">
@@ -97,7 +107,7 @@
 
     <!-- သီချင်း ၂ -->
     <div class="track-card">
-        <div class="tiktok-embed-wrapper">
+        <div class="player-wrapper">
             <iframe src="https://www.tiktok.com/player/v1/7450125862364171521?music_info=1&description=1" allowfullscreen></iframe>
         </div>
         <div class="track-info">
@@ -108,7 +118,7 @@
 
     <!-- သီချင်း ၃ -->
     <div class="track-card">
-        <div class="tiktok-embed-wrapper">
+        <div class="player-wrapper">
             <iframe src="https://www.tiktok.com/player/v1/7450125433102372104?music_info=1&description=1" allowfullscreen></iframe>
         </div>
         <div class="track-info">
@@ -117,14 +127,13 @@
         </div>
     </div>
 
-    <!-- စီးပွားရေးလုပ်ရန် စာသားလမ်းညွှန် (စာရိုက်ရုံဖြင့် စီးပွားရေးလုပ်မည့် လုံခြုံရေးစနစ်) -->
+    <!-- ဆက်သွယ်ရန်ကဏ္ဍ (အစ်ကိုကြီး စိတ်ကြိုက် ပြင်ဆင်ပြီးသား လုံခြုံရေးစနစ်) -->
     <div class="contact-box">
-        <p>📢 <b>သီချင်းတင်လိုသော ဝါသနာရှင်များနှင့် ကြော်ငြာထည့်လိုသူများအတွက်</b><br>
-        မိမိတို့၏ တေးသီချင်းများနှင့် စီးပွားရေးကြော်ငြာများကို ဤဝဘ်ဆိုက်ပေါ်တွင် သက်သာသောနှုန်းထားဖြင့် ထည့်သွင်းကြော်ငြာပေးနေပါပြီ။ အောက်ပါ Chat လင့်ခ်များမှတစ်ဆင့် စာရိုက်၍ တိုက်ရိုက် ဆက်သွယ်နိုင်ပါသည်။</p>
+        <p>တေးသီချင်းများ ထည့်သွင်းလိုသော ဝါသနာရှင်များနှင့် စီးပွားရေးကြော်ငြာ ထည့်သွင်းလိုသူများအနေဖြင့် အောက်ပါ Chat လင့်ခ်များမှတစ်ဆင့် စာရိုက်၍ တိုက်ရိုက် ဆက်သွယ်စုံစမ်းနိုင်ပါသည် ခင်ဗျာ။</p>
         
         <div class="btn-group">
-            <!-- နှိပ်လိုက်တာနဲ့ အစ်ကိုကြီးရဲ့ TikTok Chat နဲ့ YouTube ဆီ တန်းရောက်ပြီး စာပို့လို့ရမည့် ခလုတ်များ -->
-            <a href="https://www.tiktok.com/@rlay-n9m" target="_blank" class="contact-btn cb-tt">💬 TikTok Chat မှ ဆက်သွယ်ရန်</a>
+            <!-- TikTok App ကို တိုက်ရိုက် ဖွင့်ခိုင်းမည့် Deep Link စနစ် -->
+            <a href="snssdk1128://user/profile/7450125433102372104" target="_blank" class="contact-btn cb-tt">💬 TikTok Chat မှ ဆက်သွယ်ရန်</a>
             <a href="https://www.youtube.com/@RLay-n9m" target="_blank" class="contact-btn cb-yt">💬 YouTube Chat မှ ဆက်သွယ်ရန်</a>
         </div>
     </div>
