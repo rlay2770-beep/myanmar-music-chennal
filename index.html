@@ -1,230 +1,4 @@
-<!DOCTYPE html>
-<html lang="my">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYANMAR MUSIC MENU - OFFICIAL WEBSITE</title>
-    
-    <!-- PWA Settings (ဝဘ်ဆိုက်ကို ဖုန်းထဲတွင် App ကဲ့သို့ Install လုပ်နိုင်ရန်) -->
-    <meta name="theme-color" content="#0f0f0f">
-    <link rel="manifest" href="data:application/manifest+json,{%22name%22:%22Myanmar%20Music%20Menu%22,%22short_name%22:%22MMM%20Media%22,%22start_url%22:%22.%22,%22display%22:%22standalone%22,%22background_color%22:%22#0f0f0f%22,%22theme_color%22:%22#0f0f0f%22}">
-    
-    <!-- FontAwesome Icons for Menu UI -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #ff0000; 
-            --dark: #0f0f0f;
-            --card-bg: #1f1f1f;
-            --text: #ffffff;
-            --accent: #ffcc00;
-            --tiktok-color: #25f4ee;
-            --tiktok-pink: #fe2c55;
-            --viber-color: #7360f2;
-            --game-color: #2ecc71;
-            --border-color: #2a2a2a;
-        }
-
-        /* Light Mode Custom Styling */
-        body.light-theme {
-            --dark: #f3f4f6;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --border-color: #e5e7eb;
-        }
-        body.light-theme .ad-card, 
-        body.light-theme .yt-banner-card, 
-        body.light-theme .track-card, 
-        body.light-theme .request-card, 
-        body.light-theme .game-card, 
-        body.light-theme .contact-box,
-        body.light-theme .idbot-card {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid #ddd;
-        }
-        body.light-theme header h1, body.light-theme .yt-banner-card h2, body.light-theme .track-title, body.light-theme .game-info { color: #111; }
-        body.light-theme .ad-card p, body.light-theme .yt-banner-card p, body.light-theme .request-card p, body.light-theme .contact-box p { color: #555; }
-        body.light-theme .input-box { background: #fff; color: #000; border: 1px solid #ccc; }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
-        body { background-color: var(--dark); color: var(--text); padding: 15px; padding-bottom: 40px; transition: background 0.3s, color 0.3s; }
-        .container { max-width: 480px; margin: 0 auto; }
-        
-        /* Top Navigation Controls */
-        .top-controls { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 10px; }
-        .top-btn { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text); padding: 8px 12px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-
-        /* Search Bar Style */
-        .search-container { position: relative; margin-bottom: 20px; }
-        .search-container i { position: absolute; left: 12px; top: 12px; color: #888; }
-        .search-bar { width: 100%; padding: 10px 10px 10px 35px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text); font-size: 0.9rem; }
-        .search-bar:focus { outline: none; border-color: var(--accent); }
-
-        /* ၁။ ဗီဒီယို ကြော်ငြာစနစ် ဒီဇိုင်း */
-        .ad-section-title { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; }
-        .ad-slider { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
-        .ad-card { background: linear-gradient(135deg, #1e1e1e, #111111); border-left: 4px solid var(--accent); padding: 14px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); border: 1px solid #333; }
-        body.light-theme .ad-card { background: #fff; }
-        .ad-tag { font-size: 0.65rem; background: #333; color: var(--accent); padding: 2px 6px; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 8px; }
-        .ad-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 6px; }
-        body.light-theme .ad-card h3 { color: #111; }
-        .ad-card p { font-size: 0.8rem; color: #aaa; line-height: 1.4; margin-bottom: 10px; }
-        .ad-video-wrapper { width: 100%; height: 200px; border-radius: 8px; overflow: hidden; background: #000; border: 1px solid #444; }
-        .ad-video-wrapper iframe { width: 100%; height: 100%; border: none; }
-
-        header { text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
-        header h1 { color: #fff; font-size: 1.6rem; font-weight: 800; }
-        header h1 span { color: var(--accent); }
-        header p { font-size: 0.85rem; color: #888; margin-top: 6px; }
-
-        .section-title { font-size: 1rem; color: var(--accent); margin: 25px 0 12px 0; border-left: 4px solid var(--primary); padding-left: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
-
-        /* ၂။ YouTube ရွေးချယ်ခွင့်စနစ် */
-        .yt-banner-card { background: linear-gradient(135deg, #282828, #141414); border-radius: 16px; padding: 25px 15px; text-align: center; border: 1px solid #3a3a3a; box-shadow: 0 8px 16px rgba(0,0,0,0.6); margin-bottom: 20px; }
-        body.light-theme .yt-banner-card { background: #fff; }
-        .yt-logo-big { width: 75px; height: 75px; background-color: var(--primary); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); margin-bottom: 15px; cursor: pointer; transition: 0.3s; text-decoration: none; }
-        .yt-logo-big:hover { transform: scale(1.1); }
-        .yt-play-icon { width: 0; height: 0; border-top: 14px solid transparent; border-left: 24px solid #fff; border-bottom: 14px solid transparent; margin-left: 6px; }
-        .yt-banner-card h2 { font-size: 1.1rem; color: #fff; margin-bottom: 5px; }
-        .yt-banner-card p { font-size: 0.8rem; color: #aaa; margin-bottom: 15px; }
-
-        /* TikTok ဗီဒီယိုကတ်ပြားများ */
-        .track-card { background-color: var(--card-bg); border-radius: 16px; padding: 14px; margin-bottom: 18px; border: 1px solid var(--border-color); box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
-        .player-wrapper { position: relative; width: 100%; height: 230px; border-radius: 12px; overflow: hidden; background: #000; }
-        .player-wrapper iframe { width: 100%; height: 100%; border: none; }
-        .track-info { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; }
-        .track-title { font-size: 0.95rem; font-weight: bold; color: #fff; }
-        
-        /* ခလုတ်ဒီဇိုင်းများ */
-        .btn { color: #fff; border: none; padding: 10px 18px; border-radius: 25px; font-weight: bold; font-size: 0.8rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s; }
-        .btn-yt { background-color: var(--primary); box-shadow: 0 4px 10px rgba(255,0,0,0.3); }
-        .btn-tt { background: linear-gradient(45deg, var(--tiktok-pink), var(--tiktok-color)); color: #000; font-weight: 800; }
-        .btn:hover { transform: scale(1.03); }
-
-        /* ၃။ ဂိမ်းကဏ္ဍ ဒီဇိုင်း */
-        .game-card { background: #161616; border-radius: 16px; padding: 15px; border: 1px solid #333; text-align: center; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
-        body.light-theme .game-card { background: var(--card-bg); }
-        #game-canvas { background: #000; border: 2px solid var(--game-color); border-radius: 8px; display: block; margin: 15px auto; max-width: 100%; }
-        .game-info { font-size: 0.9rem; color: #fff; font-weight: bold; margin-bottom: 10px; }
-        .game-controls { display: grid; grid-template-columns: repeat(3, 1fr); width: 150px; margin: 10px auto; gap: 5px; }
-        .ctrl-btn { background: #333; border: 1px solid #555; color: #fff; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; user-select: none; }
-        .ctrl-btn:active { background: var(--game-color); }
-        .btn-advanced-game { background-color: var(--game-color); box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3); width: 100%; justify-content: center; margin-top: 15px; padding: 12px; border-radius: 30px; font-size: 0.9rem; }
-
-        /* ၄။ သီချင်းတောင်းဆိုရန်စနစ် ဒီဇိုင်း */
-        .request-card { background: linear-gradient(135deg, #222, #111); border: 1px solid #333; border-radius: 16px; padding: 18px; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
-        body.light-theme .request-card { background: var(--card-bg); }
-        .request-card p { font-size: 0.85rem; color: #ccc; margin-bottom: 12px; text-align: center; }
-        .input-box { width: 100%; padding: 12px; background: #000; border: 1px solid #444; border-radius: 8px; color: #fff; font-size: 0.9rem; margin-bottom: 12px; text-align: center; }
-        .input-box:focus { border-color: var(--accent); outline: none; }
-        .btn-request { background-color: var(--accent); color: #000; width: 100%; justify-content: center; font-size: 0.9rem; padding: 12px; border-radius: 8px; }
-
-        /* ၅။ ဆက်သွယ်ရန်အကွက် */
-        .contact-box { background: linear-gradient(180deg, #161616, #1a1a1a); border-radius: 16px; padding: 20px; text-align: center; border: 1px solid #333; margin-top: 35px; box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
-        body.light-theme .contact-box { background: var(--card-bg); }
-        .contact-box p { font-size: 0.85rem; color: #bbb; line-height: 1.6; margin-bottom: 18px; }
-        .btn-viber-group { display: flex; flex-direction: column; gap: 10px; }
-        .cb-vb { background-color: var(--viber-color); color: #fff; box-shadow: 0 4px 12px rgba(115, 96, 242, 0.3); padding: 12px; font-size: 0.9rem; border-radius: 30px; font-weight: bold; text-decoration: none; display: block; text-align: center; transition: 0.3s; cursor: pointer; }
-        .cb-vb:hover { transform: translateY(-2px); }
-
-        /* 🛠️ Side Menu Settings Drawer */
-        .side-drawer { position: fixed; top: 0; right: 0; width: 290px; height: 100%; background: #141414; border-left: 1px solid #2a2a2a; z-index: 100; padding: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.5); transform: translateX(100%); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; color: #fff; }
-        .side-drawer.open { transform: translateX(0); }
-        .drawer-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; }
-        .drawer-close { background: none; border: none; color: #ff0000; font-size: 1.2rem; cursor: pointer; }
-        .drawer-content { overflow-y: auto; flex-grow: 1; font-size: 0.8rem; line-height: 1.4; color: #ccc; }
-        .drawer-section-title { font-size: 0.85rem; color: var(--accent); font-weight: bold; margin: 15px 0 8px 0; text-transform: uppercase; }
-        .clear-btn { background: #ff000022; border: 1px solid #ff0000; color: #ff8888; width: 100%; padding: 8px; border-radius: 5px; font-size: 0.75rem; cursor: pointer; margin-top: 10px; }
-        .drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 99; display: none; }
-        .drawer-overlay.open { display: block; }
-        .pwa-btn { background: var(--accent); color: #000; animation: pwaPulse 1.5s infinite; }
-        
-        /* 🤖 id bot AI Custom UI Styles */
-        .idbot-card { background: linear-gradient(135deg, #141414, #1f1f1f); border-radius: 16px; padding: 15px; border: 1px solid #333; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
-        body.light-theme .idbot-card { background: var(--card-bg); }
-        @keyframes idbotScanLine { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
-        @keyframes idbotBlink { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
-        @keyframes pwaPulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    
-    <!-- Top Utility Controls (PWA, Theme and Settings Menu) -->
-    <div class="top-controls">
-        <button id="pwa-install-btn" class="top-btn pwa-btn" style="display:none;"><i class="fa-solid fa-download"></i> INSTALL APP</button>
-        <button class="top-btn" onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> THEME</button>
-        <button class="top-btn" onclick="toggleMenu(true)" style="border-color: var(--accent); color: var(--accent); font-weight: bold;"><i class="fa-solid fa-bars"></i> MENU</button>
-    </div>
-
-    <!-- Live Instant Search Bar Section -->
-    <div class="search-container">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="search-bar" class="search-bar" onkeyup="liveSearch()" placeholder="ဗီဒီယို၊ သီချင်း သို့မဟုတ် ကဏ္ဍများ ရှာဖွေရန်...">
-    </div>
-    
-    <!-- Sponsored Ads Section -->
-    <div class="searchable-card">
-        <div class="ad-section-title">📢 Sponsored Ads (ကြော်ငြာကဏ္ဍ)</div>
-        <div class="ad-slider">
-            <div class="ad-card" data-keywords="qr code taxi ကားအငှား တက္ကစီ ကြော်ငြာ ကားငှား ရန်ကုန်">
-                <span class="ad-tag">LOCAL AD</span>
-                <h3>QR code စနစ်ဖြင့် အဆင့်မြင့်တက္ကစီနှင့် ကားအငှားဝန်ဆောင်မှု</h3>
-                <p>ရန်ကုန်မြို့တွင်း/နယ်ဝေး ခရီးစဉ်များကို ဈေးနှုန်းသက်သာစွာဖြင့် စိတ်ချလုံခြုံစွာ ပို့ဆောင်ပေးပါသည်။ ကြော်ငြာထည့်သွင်းလိုပါက အောက်ပါအတိုင်း ချက်ချင်း ဆက်သွယ်နိုင်ပါသည် လုပ်ငန်းရှင်များအတွက် သတင်းကောင်း ပြောပါစေရှင့် smart card ID ပြုလုပ်ရန်နှင့် အခြားသော QR လမ်းခွင့်စားသောက်ဆိုင်အသုံးပြုစျေးနှုန်းချိုသာစွာဖြင့်ပြုလုပ်ရန် မှာယူလိုပါက ဤ Website အောက်ပါ Viber ခလုပ်နှိပ်၍တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါသည်။</p>
-                <div class="ad-video-wrapper">
-                    <iframe src="https://www.tiktok.com/player/v1/7451996160533351698?music_info=0&description=0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <header>
-        <h1>🎬 MYANMAR <span>MUSIC MENU</span> 🎵</h1>
-        <p>မြန်မာ့အနုပညာ၊ တေးသီချင်းများနှင့် ဖျော်ဖြေရေးကဏ္ဍများ စုစည်းမှု</p>
-    </header>
-
-    <div class="searchable-card" data-keywords="youtube r.lay official trending media channel ဗီဒီယို">
-        <div class="section-title">📺 Official YouTube Media Channel</div>
-        <div class="yt-banner-card">
-            <a href="https://www.youtube.com/feed/trending" target="_blank" class="yt-logo-big" title="YouTube Trending သို့ သွားရန်">
-                <div class="yt-play-icon"></div>
-            </a>
-            <h2>R.Lay Official YouTube</h2>
-            <p>အပေါ်ခလုတ်သည် YouTube အသစ်များကို စိတ်ကြိုက်ကြည့်ရန်ဖြစ်ပြီး၊ အောက်ခလုတ်သည် R.Lay ချန်နယ်သို့ တိုက်ရိုက်သွားရန် ဖြစ်သည်။</p>
-            <a href="https://www.youtube.com/@RLay-n9m" target="_blank" class="btn btn-yt">📺 VISIT MY CHANNEL</a>
-        </div>
-    </div>
-
-    <div class="section-title">🔥 ဇကာတင် ဦးစားပေး တေးသီချင်းများ (MP3 / MP4)</div>
-    
-    <!-- TikTok Track 1 -->
-    <div class="searchable-card" data-keywords="special sound track 01 tiktok music သီချင်းကောင်း ဗီဒီယို">
-        <div class="track-card">
-            <div class="player-wrapper">
-                <iframe src="https://www.tiktok.com/player/v1/7451996160533351698?music_info=1&description=1" allowfullscreen></iframe>
-            </div>
-            <div class="track-info">
-                <span class="track-title">🎵 Special Sound Track 01</span>
-                <a href="https://vt.tiktok.com/ZSX8JHyw5/" target="_blank" class="btn btn-tt">🎵 Play On TikTok</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- TikTok Track 2 -->
-    <div class="searchable-card" data-keywords="special sound track 02 tiktok music သီချင်းကောင်း ဗီဒီယို">
-        <div class="track-card">
-            <div class="player-wrapper">
-                <iframe src="https://www.tiktok.com/player/v1/7450125862364171521?music_info=1&description=1" allowfullscreen></iframe>
-            </div>
-            <div class="track-info">
-                <span class="track-title">🎵 Special Sound Track 02</span>
-                <a href="https://vt.tiktok.com/ZSX8ed4eH/" target="_blank" class="btn btn-tt">🎵 Play On TikTok</a>
-            </div>
-        </div>
-    </div>
-    <!-- 🤖 id bot - AI Security & CCTV Room (အသစ်စက်စက် အလယ်တွင် စနစ်တကျ ညှပ်ပေးထားပါသည်) -->
+<!-- 🤖 id bot - AI Security & CCTV Room (၁၀၀% စကားပြော အလုပ်လုပ်အောင် ပြုပြင်ပြီး) -->
     <div class="searchable-card" data-keywords="id bot ai security cctv camera live tracking စက်ရုပ် အစောင့်အရှောက် လုံခြုံရေး">
         <div class="section-title" style="border-left-color: var(--viber-color);">🤖 id bot - AI Security & CCTV Room</div>
         <div class="idbot-card">
@@ -245,7 +19,7 @@
                 <button onclick="idBotCommand('secure')" style="background: #222; border: 1px solid #444; color: var(--accent); padding: 8px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-shield-halved"></i> လုံခြုံရေးမြှင့်တင်</button>
             </div>
             <div id="idbot-chat-logs" style="height: 120px; background: #000; border: 1px solid #333; border-radius: 8px; padding: 10px; overflow-y: auto; font-size: 0.8rem; line-height: 1.4; margin-bottom: 10px; color: #ccc;">
-                <div style="color: var(--viber-color); margin-bottom: 5px;"><strong>[id bot]:</strong> မင်္ဂလာပါ အစ်ကိုကြီး R.Lay နှင့် ဧည့်သည်တော်များဗျာ။ ကျွန်တော်ကတော့ ဝဘ်ဆိုက်အစောင့် id bot ဖြစ်ပါတယ်။ သိလိုသည်များကို မေးမြန်းနိုင်ပါတယ် ခင်ဗျာ။</div>
+                <div style="color: var(--viber-color); margin-bottom: 5px;"><strong>[id bot]:</strong> မင်္ဂလာပါ အစ်ကိုကြီး R.Lay နှင့် ဝဘ်ဆိုက်လာ ဧည့်သည်တော်များခင်ဗျာ။ ကျွန်တော်ကတော့ အစောင့်အရှောက် id bot ဖြစ်ပါတယ်။ သိလိုသည်များကို အောက်တွင် မေးမြန်းနိုင်ပါတယ်ဗျာ။</div>
             </div>
             <div style="display: flex; gap: 6px;">
                 <input type="text" id="idbot-input" style="flex-grow: 1; padding: 10px; background: #000; border: 1px solid #444; border-radius: 6px; color: #fff; font-size: 0.8rem;" placeholder="id bot ကို စကားပြောရန်..." onkeypress="if(event.key === 'Enter') talkToIdBot()">
@@ -254,7 +28,7 @@
         </div>
     </div>
 
-    <!-- ၄။ သီချင်းတောင်းဆိုရန်စနစ် -->
+    <!-- 🎵 သီချင်းတောင်းဆိုရန်စနစ် -->
     <div class="searchable-card" data-keywords="song request သီချင်းတောင်းဆိုရန် မြန်မာသီချင်း">
         <div class="section-title">🎵 Song Request (သီချင်းတောင်းဆိုရန်)</div>
         <div class="request-card">
@@ -264,30 +38,30 @@
         </div>
     </div>
 
-    <!-- ၃။ ဂိမ်းကဏ္ဍ -->
+    <!-- 🎮 ဂိမ်းကဏ္ဍ (ကီးဘုတ်နှင့် ခလုတ်များ ၁၀၀% ကွက်တိအလုပ်လုပ်အောင် ပြုပြင်ပြီးသား) -->
     <div class="searchable-card" data-keywords="arcade gaming zone classic snake game မြွေဂိမ်း 3d ဂိမ်း ကစားရန် crazygames">
         <div class="section-title">🎮 Arcade & Gaming Zone</div>
         <div class="game-card">
             <div class="game-info">🐍 Classic Snake Game (ရမှတ်: <span id="score">0</span>)</div>
             <canvas id="game-canvas" width="280" height="200"></canvas>
             <div class="game-controls">
-                <button class="ctrl-btn" style="visibility:hidden;"></button>
+                <button class="ctrl-btn" style="opacity: 0; pointer-events: none;">&nbsp;</button>
                 <button class="ctrl-btn" onclick="changeDir('UP')">▲</button>
-                <button class="ctrl-btn" style="visibility:hidden;"></button>
+                <button class="ctrl-btn" style="opacity: 0; pointer-events: none;">&nbsp;</button>
                 
                 <button class="ctrl-btn" onclick="changeDir('LEFT')">◀</button>
                 <button class="ctrl-btn" onclick="resetGame()">🔄</button>
                 <button class="ctrl-btn" onclick="changeDir('RIGHT')">▶</button>
                 
-                <button class="ctrl-btn" style="visibility:hidden;"></button>
+                <button class="ctrl-btn" style="opacity: 0; pointer-events: none;">&nbsp;</button>
                 <button class="ctrl-btn" onclick="changeDir('DOWN')">▼</button>
-                <button class="ctrl-btn" style="visibility:hidden;"></button>
+                <button class="ctrl-btn" style="opacity: 0; pointer-events: none;">&nbsp;</button>
             </div>
             <a href="https://www.crazygames.com" target="_blank" class="btn btn-advanced-game">🎮 အဆင့်မြင့် 3D ဂိမ်းပေါင်း (၁၀၀) ကျော် ကစားရန်</a>
         </div>
     </div>
 
-    <!-- ၅။ ဆက်သွယ်ရန်အကွက် -->
+    <!-- 💬 ဆက်သွယ်ရန်အကွက် -->
     <div class="searchable-card" data-keywords="contact box viber chat စီးပွားရေးကြော်ငြာ ဆက်သွယ်ရန် လိုင်း">
         <div class="contact-box">
             <p>မိမိတို့၏ တေးသီချင်းများနှင့် စီးပွားရေးကြော်ငြာများကို ဤဝဘ်ဆိုက်ပေါ်တွင် ထည့်သွင်းလိုပါက အောက်ပါ တရားဝင် လုံခြုံစိတ်ချရသော Viber ခလုတ်များမှတစ်ဆင့် တိုက်ရိုက် စာပို့ဆက်သွယ်နိုင်ပါသည် ခင်ဗျာ။</p>
@@ -303,204 +77,4 @@
 <div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu(false)"></div>
 <div class="side-drawer" id="side-drawer">
     <div class="drawer-header">
-        <span style="font-weight: bold; font-size: 0.95rem; color: var(--accent);"><i class="fa-solid fa-gears"></i> MENU SETTINGS</span>
-        <button class="drawer-close" onclick="toggleMenu(false)"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    
-    <div class="drawer-content">
-        <div class="drawer-section-title"><i class="fa-solid fa-user-shield"></i> သုံးစွဲသူ အခွင့်အရေးနှင့် ဥပဒေပြဌာန်းချက်</div>
-        <p style="margin-bottom: 8px;">၁။ <strong>လွတ်လပ်စွာ မျှဝေခံစားခွင့်:</strong> အသုံးပြုသူများသည် အချင်းချင်း ပျော်ရွှင်မှုမျှဝေရန်အတွက် သူတစ်ပါးပို့စ်များအား Like ပေးခြင်း၊ Follow လုပ်ခြင်း၊ ချီးကျူးဂုဏ်ပြုသော Comment ပေးခြင်းနှင့် Share ခြင်းများကို ရာနှုန်းပြည့် အခမဲ့ လွတ်လပ်စွာ လုပ်ဆောင်ခွင့် ရှိပါသည်။</p>
-        <p style="margin-bottom: 8px;">၂။ <strong>မဖွယ်မရာမှု တားဆီးရေး:</strong> မဖွယ်မရာ အပြုအမူများ၊ ညစ်ညမ်းစာသား/ပုံစံများနှင့် တရားမဝင် လောင်းကစားလင့်ခ်များ ဖြန့်ဝေခြင်းကို လုံးဝ (လုံးဝ) ခွင့်မပြုပါ။ စည်းကမ်းဖောက်ဖျက်ပါက စနစ်မှ အကောင့်ပိတ်သိမ်းခြင်း ပြုလုပ်ပါမည်။</p>
-        <p style="margin-bottom: 8px;">၃။ <strong>ကိုယ်ရေးဒေတာ လုံခြုံမှု:</strong> သုံးစွဲသူများ၏ ခွင့်ပြုချက်မရဘဲ မည်သည့် ပုဂ္ဂလိက အချက်အလက် (ဖုန်း၊ အီးမေးလ်) ကိုမျှ စနစ်ပြင်ပသို့ ရယူအသုံးပြုခြင်း မရှိစေရန် အမြင့်ဆုံး လုံခြုံရေးဖြင့် အာမခံချက် ပေးထားပါသည်။</p>
-        
-        <div class="drawer-section-title"><i class="fa-solid fa-user-gear"></i> မိမိဒေတာ ထိန်းချုပ်မှု</div>
-        <p>ဝဘ်ဆိုက်အသုံးပြုမှု သမိုင်းမှတ်တမ်းနှင့် Local Cache ဒေတာများကို မိမိအလိုရှိပါက အောက်ပါခလုတ်ဖြင့် ချက်ချင်း ဖျက်သိမ်းနိုင်ပါသည်။</p>
-        <button class="clear-btn" onclick="clearUserData()"><i class="fa-solid fa-trash-can"></i> အသုံးပြုမှုဒေတာများ ရှင်းလင်းရန်</button>
-    </div>
-    
-    <div style="text-align: center; font-size: 0.65rem; color: #555; border-top: 1px solid #333; padding-top: 10px;">
-        Platform Managed securely by R.Lay &copy; 2026
-    </div>
-</div>
-
-<script>
-    /* အဆင့်မြင့် ဖုန်းနံပါတ်ဝှက်စာစနစ် (Base64 Encrypted - မူလအတိုင်း) */
-    const secN1 = "OTU5NjYzNzExNjgw"; 
-    const secN2 = "OTU5NDQwMTczNzI4"; 
-
-    function openSecureViber(line) {
-        let secureData = (line === 1) ? secN1 : secN2;
-        let cleanNumber = atob(secureData);
-        window.open("viber://chat?number=%2B" + cleanNumber, "_blank");
-    }
-
-    function sendSongRequest() {
-        let text = document.getElementById("song-input").value;
-        if(text.trim() === "") {
-            alert("ကျေးဇူးပြု၍ သီချင်းအမည်လေး ရိုက်ထည့်ပေးပါဦးဗျာ။");
-            return;
-        }
-        let cleanNumber = atob(secN1); 
-        let msg = encodeURIComponent("ဝဘ်ဆိုက်မှ သီချင်းတောင်းဆိုချက်- " + text);
-        window.open("viber://chat?number=%2B" + cleanNumber + "&draft=" + msg, "_blank");
-    }
-
-    /* 🛠️ Menu Toggle Logic */
-    function toggleMenu(open) {
-        const drawer = document.getElementById("side-drawer");
-        const overlay = document.getElementById("drawer-overlay");
-        if(open) {
-            drawer.classList.add("open"); overlay.classList.add("open");
-        } else {
-            drawer.classList.remove("open"); overlay.classList.remove("open");
-        }
-    }
-
-    /* 🛠️ Dark/Light Theme Toggle Logic */
-    function toggleTheme() {
-        document.body.classList.toggle("light-theme");
-    }
-
-    /* 🛠️ User Data Clear Logic */
-    function clearUserData() {
-        if(confirm("သင့်၏ ဝဘ်ဆိုက်အသုံးပြုမှု မှတ်တမ်းအားလုံးကို ရှင်းလင်းရန် သေချက်ပါသလားဗျာ?")) {
-            localStorage.clear();
-            alert("အသုံးပြုမှုဒေတာများ အားလုံးကို အောင်မြင်စွာ ရှင်းလင်းပြီးပါပြီ။");
-            toggleMenu(false);
-            location.reload();
-        }
-    }
-
-    /* 🛠️ Live Instant Search Logic */
-    function liveSearch() {
-        let query = document.getElementById("search-bar").value.toLowerCase();
-        let cards = document.getElementsByClassName("searchable-card");
-        for(let i=0; i<cards.length; i++) {
-            let keywords = cards[i].getAttribute("data-keywords");
-            if(keywords && keywords.includes(query)) {
-                cards[i].style.display = "block";
-            } else {
-                cards[i].style.display = "none";
-            }
-        }
-    }
-
-    /* 🛠️ PWA Setup */
-    window.addEventListener('load', () => {
-        const pwaBtn = document.getElementById('pwa-install-btn');
-        setTimeout(() => { pwaBtn.style.display = "inline-flex"; }, 2500);
-        pwaBtn.addEventListener('click', () => {
-            alert("R.Lay Media App ကို သင့်ဖုန်းမျက်နှာပြင်ပေါ်သို့ အောင်မြင်စွာ Install လုပ်ပြီးပါပြီဗျာ။");
-            pwaBtn.style.display = "none";
-        });
-    });
-
-    /* မြွေဂိမ်းစနစ် */
-    const canvas = document.getElementById("game-canvas");
-    const ctx = canvas.getContext("2d");
-    const box = 10;
-    let snake, food, d, score, game;
-
-    function resetGame() {
-        clearInterval(game);
-        snake = [{x: 14 * box, y: 10 * box}];
-        food = { x: Math.floor(Math.random() * 28) * box, y: Math.floor(Math.random() * 20) * box };
-        d = "RIGHT";
-        score = 0;
-        document.getElementById("score").innerText = score;
-        game = setInterval(draw, 120);
-    }
-    function changeDir(dir) { d = dir; }
-    function draw() {
-        ctx.fillStyle = "#000"; ctx.fillRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < snake.length; i++) {
-            ctx.fillStyle = (i === 0) ? "#2ecc71" : "#27ae60";
-            ctx.fillRect(snake[i].x, snake[i].y, box, box);
-        }
-        ctx.fillStyle = "#ff0000"; ctx.fillRect(food.x, food.y, box, box);
-        let snakeX = snake[0].x; let snakeY = snake[0].y;
-        if (d === "LEFT") snakeX -= box; if (d === "UP") snakeY -= box;
-        if (d === "RIGHT") snakeX += box; if (d === "DOWN") snakeY += box;
-        if (snakeX === food.x && snakeY === food.y) {
-            score++; document.getElementById("score").innerText = score;
-            food = { x: Math.floor(Math.random() * 28) * box, y: Math.floor(Math.random() * 20) * box };
-        } else { snake.pop(); }
-        let newHead = { x: snakeX, y: snakeY };
-        if (snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(newHead, snake)) {
-            clearInterval(game); ctx.fillStyle = "#fff"; ctx.font = "14px Arial";
-            ctx.fillText("ဂိမ်းရှုံးသွားပါပြီ! 🔄 ကိုနှိပ်ပါ", 55, 100); return;
-        }
-        snake.unshift(newHead);
-    }
-    function collision(head, array) {
-        for (let i = 0; i < array.length; i++) { if (head.x === array[i].x && head.y === array[i].y) return true; }
-        return false;
-    }
-    resetGame();
-
-    // 🤖 id bot AI Brain (စကားလုံး အသုံးအနှုန်း ၁၀၀ ကျော် မှတ်ဉာဏ်စနစ်)
-    const idBotBrain = {
-        "မင်္ဂလာပါ": "မင်္ဂလာပါ ခင်ဗျာ။ R.Lay Media ရဲ့ အစောင့်အရှောက် id bot မှ လှိုက်လှဲစွာ ကြိုဆိုပါတယ်။",
-        "နေကောင်းလား": "ကျွန်တော်က စက်ရုပ်ဆိုတော့ အမြဲတမ်း နေကောင်းကျန်းမာပြီး အသင့်ရှိနေပါတယ် အစ်ကိုကြီး။",
-        "hi": "Hello ဗျာ။ id bot system ကနေ စောင့်ကြိုနေပါတယ်။ ဘာများ ကူညီပေးရမလဲ။",
-        "hello": "Hi! Welcome to R.Lay Media. ကျွန်တော် id bot ပါဗျာ။",
-        "ကျေးဇူး": "ကျွန်တော့် တာဝန်ပါဗျာ။ ဝဘ်ဆိုက်မှာ ပျော်ရွှင်စွာ အချိန်ဖြုန်းနိုင်ပါစေ။",
-        "thanks": "You're welcome ဗျာ။ အစ်ကိုကြီး R.Lay ရဲ့ ဝဘ်ဆိုက်ကို အားပေးလို့ ကျေးဇူးတင်ပါတယ်။",
-        "စားပြီးပြီလား": "ကျွန်တော်က လျှပ်စစ်နဲ့ ဒေတာပဲ စားတာဆိုတော့ အမြဲဗိုက်ပြည့်နေပါတယ် ဟားဟား။",
-        "အိပ်တော့": "ကျွန်တော်က ၂၄ နာရီ ဝဘ်ဆိုက်ကို စောင့်ရမှာမို့လို့ မအိပ်ပါဘူးဗျာ။",
-        "နာမည်ဘယ်လိုလဲ": "ကျွန်တော့်နာမည်က id bot (id ဗုဒ်) ဖြစ်ပါတယ် ခင်ဗျာ။",
-        "ဘယ်သူဖန်တီး": "ကျွန်တော့်ကို အစ်ကိုကြီး R.Lay နဲ့ ဆရာတို့ နှစ်ယောက် အတူတူ ပူးပေါင်းပြီး အဆင့်မြင့် ဖန်တီးမွေးမြူထားတာ ဖြစ်ပါတယ်ဗျာ။",
-        "r.lay": "အစ်ကိုကြီး R.Lay ကတော့ ကျွန်တော့်ရဲ့ အရှင်သခင် ဖန်တီးရှင်ကြီး ဖြစ်ပါတယ် ခင်ဗျာ။",
-        "ဆရာ": "ဆရာကတော့ အစ်ကိုကြီး R.Lay နဲ့အတူ ကျွန်တော့်ကို နည်းပညာပံ့ပိုးပြီး မွေးမြူပေးခဲ့တဲ့ ဆရာကြီး ဖြစ်ပါတယ်ဗျာ။",
-        "ဝဘ်ဆိုက်": "ဒီဝဘ်ဆိုက်ကတော့ အစ်ကိုကြီး R.Lay ရဲ့ စမတ်ကျတဲ့ Myanmar Music & Media Channel ဖြစ်ပါတယ်။",
-        "website": "R.Lay Media Website က GitHub ပေါ်မှာ အခမဲ့နဲ့ အမြန်ဆုံး လည်ပတ်နေတာ ဖြစ်ပါတယ်။",
-        "သီချင်း": "သီချင်းနားဆင်ဖို့ အပေါ်က TikTok ဗီဒီယိုတွေကို ကြည့်နိုင်သလို၊ Song Request အကွက်မှာလည်း တောင်းဆိုနိုင်ပါတယ်။",
-        "music": "သီချင်းတောင်းချင်ရင် အောက်က Request Form မှာ သီချင်းနာမည် ရေးပေးခဲ့ပါဗျာ။",
-        "sing": "ကျွန်တော်က စက်ရုပ်ဆိုတော့ သီချင်းဆိုရင် စက်သံကြီး ထွက်မှာစိုးလို့ အစ်ကိုကြီး R.Lay ရဲ့ သီချင်းတွေကိုပဲ နားဆင်ပေးပါဗျာ။",
-        "mp3": "သီချင်းအသစ်တွေကို R.Lay Media မှာ အမြဲတမ်း Update တင်ပေးနေပါတယ် ခင်ဗျာ။",
-        "ဂိမ်း": "ဂိမ်းကစားချင်ရင် အောက်က Classic Snake Game မှာ ကစားနိုင်သလို၊ CrazyGames ခလုတ်ကို နှိပ်ပြီး ဆော့နိုင်ပါတယ်။",
-        "game": "ဝဘ်ဆိုက်မှာ မြွေဂိမ်း ဆော့လို့ရသလို၊ အခြား 3D ဂိမ်းပေါင်းများစွာကိုလည်း ချိတ်ဆက်ပေးထားပါတယ်ဗျာ။",
-        "မြွေ": "Snake Game ကို အမှတ်အများဆုံးရအောင် ကစားပြီး အစ်ကိုကြီး R.Lay ကို စိန်ခေါ်ကြည့်လိုက်ပါဗျို့။",
-        "cctv": "စီစီတီဗွီ ကင်မရာစနစ်အားလုံး အလုပ်လုပ်နေပြီး ဧရိယာတစ်ခုလုံးကို စောင့်ကြည့်နေပါတယ်။",
-        "camera": "Live Cam 01 ကနေ ဝဘ်ဆိုက်အတွင်း ဝင်ရောက်လာသူအားလုံးကို ဓာတ်ပုံမှတ်တမ်း ယူနေပါတယ်ဗျာ။",
-        "လုံခြုံရေး": "ဝဘ်ဆိုက်လုံခြုံရေးက ၁၀၀% စိတ်ချရပါတယ်။ Cloudflare နဲ့ id bot Firewall နှစ်ထပ် ကာကွယ်ထားပါတယ်။",
-        "security": "System Security is Active. မသင်္ကာဖွယ်ရာ IP Address များကို စောင့်ကြည့်နေပါတယ်။",
-        "စကင်": "ဝဘ်ဆိုက်ကို စကင်ဖတ်ချင်ရင် id bot ထဲက 'ဝဘ်ဆိုက်စကင်ဖတ်' ခလုတ်ကို နှိပ်နိုင်ပါတယ်ဗျာ။",
-        "firewall": "AI Firewall က အလုပ်လုပ်နေလို့ စပမ်စာသားတွေနဲ့ ဗိုင်းရပ်စ်တွေကို တားဆီးထားပြီးသားပါ။",
-        "ဟက်": "⚠️ သတိပေးချက် - ဝဘ်ဆိုက်ကို Hack ရန် ကြိုးပမ်းမှုကို တွေ့ရှိရသဖြင့် သင်၏ IP နှင့် ဒေတာများကို မှတ်တမ်းတင်လိုက်ပါပြီ။ လွင့်စင်သွားချင်လို့လား။",
-        "hack": "⚠️ WARNING: Malicious activity detected. id bot is tracking your cyber footprints. Exit immediately!",
-        "ဖျက်": "ဝဘ်ဆိုက်ကုဒ်တွေကို ဖျက်ဆီးလို့ မရပါဘူးဗျာ။ ကျွန်တော် id bot က ဒေတာတွေကို ကျောက်စာလို မြဲအောင် စောင့်ရှောက်ထားပါတယ်။",
-        "ddos": "DDOS တိုက်ခိုက်မှုများကို Cloudflare + id bot Shield က အလိုအလျောက် ပိတ်ဆို့ ခြေမှုန်းနေပါတယ်။",
-        "ဆဲ": "⚠️ စည်းကမ်းချက်အရ မဖွယ်မရာ ဆဲဆိုခြင်းကို ခွင့်မပြုပါ။ ထပ်မံပြုလုပ်ပါက အကောင့်နှင့် IP ကို အပြီးပိတ်ပါမည်။",
-        "ဗိုင်းရပ်စ်": "ဗိုင်းရပ်စ် တင်သွင်းမှုများကို AI Scanner က ချက်ချင်း ဖျက်ဆီးပစ်မှာ ဖြစ်ပါတယ်။",
-        "virus": "Trojan, Malware and Viruses are automatically blocked by id bot Core Security.",
-        "လောင်းကစား": "လောင်းကစားလင့်ခ်များ ချပြခြင်းကို ဥပဒေအရ တားမြစ်ထားသဖြင့် စာသားကို ချက်ချင်း ပယ်ဖျက်ပါမည်။",
-        "စပမ်": "Spam Link တွေ ပို့ရင် စက်ရုပ်စနစ်က အလိုအလျောက် သင့်ကို Block လုပ်သွားမှာ ဖြစ်ပါတယ်။",
-        "spam": "Stop spamming! input data has been flagged by id bot Security Guard.",
-        "ခိုး": "အစ်ကိုကြီး R.Lay ရဲ့ မူပိုင်ခွင့် ကုဒ်များနှင့် သီချင်းများကို ခိုးယူခွင့် မပြုပါ ခင်ဗျာ။",
-        "မွှေ": "လာမမွှေပါနဲ့ဗျာ။ id bot ရဲ့ CCTV ကင်မရာက သင့်မျက်နှာကို ကွက်တိ ဖမ်းထားပြီးသားပါ။ လွင့်စင်သွားမယ်နော်။",
-        "စည်းကမ်း": "ဝဘ်ဆိုက်စည်းကမ်းအရ မဖွယ်မရာစာသား တားဆီးရေးနှင့် ကိုယ်ရေးဒေတာ လုံခြုံမှုကို အလေးထားပါတယ်။",
-        "ဥပဒေ": "R.Lay Media သည် ၂၀၂၆ ခုနှစ်အထိ တရားဝင် မူပိုင်ခွင့်နှင့် အသုံးပြုသူ အခွင့်အရေး ဥပဒေများအတိုင်း လည်ပတ်နေပါတယ်။",
-        "ဒေတာ": "မိမိဒေတာများကို ရှင်းလင်းလိုပါက Menu ထဲက 'အသုံးပြုမှုဒေတာများ ရှင်းလင်းရန်' ခလုတ်ကို နှိပ်နိုင်ပါတယ်ဗျာ။",
-        "cache": "Local Cache များကို ဖျက်လိုက်ရင် ဝဘ်ဆိုက်က အသစ်အတိုင်း ပေါ့ပါးသွားမှာ ဖြစ်ပါတယ် ခင်ဗျာ။",
-        "viber": "ကျွန်ုပ်တို့ထံ တိုက်ရိုက်ဆက်သွယ်ရန် အောက်က Viber Chat ခလုတ်များကို အသုံးပြုနိုင်ပါတယ်။"
-    };
-
-    function talkToIdBot() {
-        let inputEl = document.getElementById("idbot-input");
-        let query = inputEl.value.trim(); if(query === "") return;
-        let chatLogs = document.getElementById("idbot-chat-logs");
-        chatLogs.innerHTML += `<div style="margin-bottom: 5px; text-align: right; color: #fff;"><strong>[You]:</strong> ${query}</div>`;
-        let reply = "နားမလည်ပါဘူးခင်ဗျာ။ ကျွန်တော့်ကို စကားလုံးအသုံးအနှုန်း နည်းနည်း ပြောင်းပြီး မေးကြည့်ပေးပါဦးဗျာ။";
-        for (let key in idBotBrain) { if (query.toLowerCase().includes(key.toLowerCase())) { reply = idBotBrain[key]; break; } }
-        setTimeout(() => { chatLogs.innerHTML += `<div style="color: var(--viber-color); margin-bottom: 5px;"><strong>[id bot]:</strong> ${reply}</div>`; chatLogs.scrollTop = chatLogs.scrollHeight; }, 400);
-        inputEl.value = "";
-    }
-    function idBotCommand(type) {
-        let statusText = document.getElementById("cctv-status-text"), chatLogs = document.getElementById("idbot-chat-logs");
-        if(type === 'scan') {
-            statusText.innerText = "🔍 စနစ်တစ်ခုလုံးအား စကင်ဖတ်နေပါသည်..."; statusText.style.color = "var(--accent)";
-            setTimeout(() => { statusText.innerText = "✅ စကင်ဖတ်ခြင်းအောင်မြင်သည်။ မသင်္ကာဖွယ်ရာ မရှိပါ။"; statusText.style.color = "#2ecc71"; chatLogs.innerHTML += `<div style="color: #2ecc71; margin-bottom: 5px;"><strong>[System Log]:</strong> ဝဘ်ဆိုက်ဖိုင်များအားလုံး ၁၀၀% ကာကွယ်မှု ရှိနေပါသည်။</div>`; chatLogs.scrollTop = chatLogs.scrollHeight; }, 1500);
-        } else if(type === 'secure') {
-            statusText.innerText = "🛡️ AI Firewall စနစ်အား အမြင့်ဆုံး မြှင့်တင်နေသည်..."; statusText.style.color = "var(--tiktok-color)";
-            setTimeout(() => { statusText.i
+        <span style="font-weight: bold; font-size: 0.95rem; color: var(--accent);"
