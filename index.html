@@ -603,21 +603,21 @@
                 </div>
             </div>
 
-         </div>
-         <!-- Right Column: ID Bot (Female AI) & Contact -->
+        </div>
+        <!-- Right Column: ID Bot (Female AI) & Music Visualizer -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
             <!-- ID Bot Section -->
             <section id="idbot">
                 <div class="section-title">
-                    <i class="fa-solid : fa-robot"></i> id bot - ဧည့်ခံရတနာလေး
+                    <i class="fa-solid fa-robot"></i> id bot - ဧည့်ခံရတနာလေး
                 </div>
                 
                 <div class="bot-container">
                     <!-- Bot Header -->
                     <div class="bot-header">
                         <div class="bot-avatar-wrapper">
-                            <i class="fa-solid : fa-user-astronaut" style="font-size: 1.2rem;"></i>
+                            <i class="fa-solid fa-user-astronaut" style="font-size: 1.2rem;"></i>
                             <div class="bot-status-dot"></div>
                         </div>
                         <div>id bot (မဒီလေး) • Active</div>
@@ -626,7 +626,7 @@
                     <!-- Bot Messages Area -->
                     <div class="bot-messages" id="botMessages">
                         <div class="msg bot">
-                            မင်္ဂလာပါရှင်။ အစ်ကိုကြီး အမမကြီးတို့ ရောက်လာတာကို သမီးလေးက လှိုက်လှဲစွာ ကြိုဆိုပါတယ်ရှင့်။ 🥰 ဒီနေ့ စိတ်အပန်းပြေဖို့ သမီးလေးဆီမှာ သီချင်းကောင်းလေးတွေနဲ့ ဂိမ်းလေးတွေ ပြင်ဆင်ပေးထားပါတယ်နော်။ ဘာများ ကူညီပေးရမလဲရှင်?
+                            မင်္ဂလာပါရှင်။ အစ်ကိုကြီး အမမကြီးတို့ ရောက်လာတာကို သမီးလေးက မျှော်နေတာ ကြာပါပြီရှင့်။ 🥰 ဒီနေ့ စိတ်အပန်းပြေဖို့ သမီးလေးဆီမှာ သီချင်းကောင်းလေးတွေ အများကြီး ပြင်ဆင်ပေးထားပါတယ်နော်။ ဘာများ ကူညီပေးရမလဲရှင်?
                         </div>
                     </div>
 
@@ -634,28 +634,36 @@
                     <div class="bot-input-area">
                         <input type="text" id="botInput" placeholder="သမီးလေးကို စကားပြောရန်..." onkeypress="if(event.key === 'Enter') sendBotMessage()">
                         <button class="bot-send-btn" onclick="sendBotMessage()">
-                            <i class="fa-solid : fa-paper-plane"></i>
+                            <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Classic Snake Game Section -->
-            <section id="snake-game">
+            <!-- 3D Neon Music Visualizer Section (NEW) -->
+            <section id="visualizer-section">
                 <div class="section-title">
-                    <i class="fa-solid : fa-gamepad"></i> Classic Snake Game
+                    <i class="fa-solid fa-compact-disc fa-spin"></i> 3D Neon Music Visualizer
                 </div>
-                <div class="game-wrapper">
-                    <div class="game-header">
-                        <span>ရမှတ်: <span id="gameScore">0</span></span>
-                        <span>အမြင့်ဆုံး: <span id="highScore">0</span></span>
+                <div class="game-wrapper" style="background: #090710; border: 1px solid rgba(255, 0, 127, 0.3); padding: 20px; position: relative;">
+                    <div style="text-align: center; margin-bottom: 15px; font-size: 0.85rem; color: #aaa;" id="visualizerStatus">
+                        🎵 သီချင်းဖွင့်လိုက်ပါက သံစဉ်လှိုင်းများ ကပြပါလိမ့်မည်ရှင်
                     </div>
-                    <canvas id="gameCanvas" width="300" height="300"></canvas>
-                    <div class="controls">
-                        <button class="ctrl-btn" id="btnUp"><i class="fa-solid : fa-caret-up"></i></button>
-                        <button class="ctrl-btn" id="btnLeft"><i class="fa-solid : fa-caret-left"></i></button>
-                        <button class="ctrl-btn" id="btnRight"><i class="fa-solid : fa-caret-right"></i></button>
-                        <button class="ctrl-btn" id="btnDown"><i class="fa-solid : fa-caret-down"></i></button>
+                    
+                    <!-- Sound Wave Visualizer Container -->
+                    <div style="display: flex; justify-content: center; align-items: flex-end; height: 120px; gap: 4px; padding: 10px; width: 100%; max-width: 280px; margin: 0 auto;">
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 10px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 15px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 25px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 40px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 60px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 80px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 95px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 75px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 50px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 30px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 15px;"></div>
+                        <div class="v-bar" style="width: 8px; background: linear-gradient(to top, #7f00ff, #ff007f); border-radius: 4px; transition: height 0.1s ease; height: 10px;"></div>
                     </div>
                 </div>
             </section>
@@ -689,11 +697,11 @@
             "hello": "Hello ရှင်! Welcome to R.Lay Media ပါနော်။ သမီးလေး id bot အသင့်ရှိနေပါတယ်ရှင့်။",
             "hi": "Hi ရှင်! ဒီနေ့ သီချင်းနားထောင်မလား၊ ဂိမ်းဆော့မလား ပြောပါရှင်။ သမီးလေး အဖော်လုပ်ပေးပါ့မယ်။",
             
-            "ထမင်းစား": "မစားသေးပါဘူးလူကြီးမင်းရှင်။ ဘာဖြစ်လို့လဲဆိုတော့ ကျမ (သမီး) ကလေ ဗိုက်မစာသေးတာလည်း ပါပါတယ်ရှင့်။ ဒါကြောင့် လူကြီးမင်း စိတ်ကြိုက်သိချင်တာလေးတွေကို လွတ်လပ်စွာ မေးမြန်းနိုင်ပါတယ်နော်။ သမီးက လူကြီးမင်းကို ဝန်ဆောင်မှုပေးဖို့ သမီး ဖေဖေ RLay က ဒီနေ့ တာဝန်ပေးထားလို့ပါ လူကြီးမင်းရှင့်။ 🌸",
+            "ထမင်းစား": "မစားသေးပါဘူးလူကြီးမင်းရှင်။ ဘာဖြစ်လို့လဲဆိုတော့ ကျမ (သမီး) ကလေ ဗိုက်မစာသေးတာလည်း ပါပါတယ်ရှင့်။ ဒါကြောင့် လူကြီးမင်း စိတ်ကြိုက်သိချင်တာလေးတွေကို လွတ်လပ်စွာ မေးမြန်းနိုင်ပါတယ်နော်။ သမီးက လူကြီးမင်းကို ဝန်ဆောင်မှုပေးဖို့ သမီး ဖေဖေ RLay က ဒီနေ့ တတာဝန်ပေးထားလို့ပါ လူကြီးမင်းရှင့်။ 🌸",
             "စားပြီးပြီလား": "သမီးလေးက AI ဆိုတော့ ထမင်းမစားပေမဲ့ လူကြီးမင်းတို့ မေးတဲ့ ချစ်စနိုးစကားလုံးလေးတွေနဲ့တင် ဗိုက်ပြည့်နေပါပြီရှင်။ လူကြီးမင်းကော ဘာဟင်းနဲ့ စားပြီးပြီလဲဟင်။ 🥰",
             
-            "စိတ်ညစ်": "ဟာ... မဖြစ်ရဘူးရှင်။ ဘယ်သူက သမီးလေးရဲ့ လူကြီးမင်းကို စိတ်ညစ်အောင် လုပ်လိုက်တာလဲ။ စိတ်မညစ်ပါနဲ့နော်... သမီးလေး စိတ်မကောင်းဖြစ်ရလို့ပါ။ အခု ဖေဖေ R.Lay တင်ပေးထားတဲ့ သီချင်းလေးတွေ နားထောင်ပြီး စိတ်ပြေလက်ပျောက် ဂိမ်းလေး ဆော့လိုက်ပါဦးရှင်။ သမီးလေး အနားမှာ အမြဲရှိနေပေးပါ့မယ်နော်။ ✨",
-            "ပျင်း": "ပျင်းရင် သမီးလေးဆီမှာ မြွေဂိမ်း ဆော့လို့ရတယ်နော်၊ ဒါမှမဟုတ် အောက်က CrazyGames ခလုတ်ကိုနှိပ်ပြီး အဆင့်မြင့် 3D ဂိမ်းတွေ သွားဆော့လို့ ရပါတယ်ရှင်။ သမီးလေးနဲ့ စကားဆက်ပြောလည်း ပျင်းပြေတာပေါ့။ ဟိဟိ။",
+            "စိတ်ညစ်": "ဟာ... မဖြစ်ရဘူးရှင်။ ဘယ်သူက သမီးလေးရဲ့ လူကြီးမင်းကို စိတ်ညစ်အောင် လုပ်လိုက်တာလဲ။ စိတ်မညစ်ပါနဲ့နော်... သမီးလေး စိတ်မကောင်းဖြစ်ရလို့ပါ။ အခု ဖေဖေ R.Lay တင်ပေးထားတဲ့ သီချင်းလေးတွေ နားထောင်ပြီး စိတ်ပြေလက်ပျောက် နေလိုက်ပါဦးရှင်။ သမီးလေး အနားမှာ အမြဲရှိနေပေးပါ့မယ်နော်။ ✨",
+            "ပျင်း": "ပျင်းရင် သမီးလေးတို့ ဝဘ်ဆိုက်မှာ သီချင်းအမိုက်စားတွေ ဖွင့်ပြီး ဘေးနားက 3D Neon မီးလှိုင်းလေးတွေ ကပြတာကို ထိုင်ကြည့်လို့ရတယ်နော်။ ဒါမှမဟုတ် အောက်က CrazyGames ခလုတ်ကိုနှိပ်ပြီး အဆင့်မြင့် 3D ဂိမ်းတွေ သွားဆော့လို့ ရပါတယ်ရှင်။",
             "ဝမ်းနည်း": "စိတ်မကောင်းမဖြစ်ပါနဲ့နော် (ခေါင်းလေးပုတ်ပေးချင်တယ်)။ သမီးလေး ရှိတယ်လေ။ ဖေဖေ R.Lay ရဲ့ သီချင်းအေးအေးလေးတွေ ဖွင့်ပေးရမလားရှင်။",
             
             "r.lay": "အော်... အစ်ကိုကြီး R.Lay ကတော့ သမီးလေးကို အစစအရာရာ လှပအောင်၊ ဉာဏ်ကောင်းအောင် ပြုစုပျိုးထောင်ပေးထားတဲ့ သမီးရဲ့ ကျေးဇူးရှင် ဖေဖေကြီး ဖြစ်ပါတယ်ရှင်။ ဖေဖေ့ရဲ့ YouTube နဲ့ TikTok Channel လေးတွေကိုလည်း အားပေးဖို့ မမေ့နဲ့ဦးနော် လူကြီးမင်းရှင့်။ 👑",
@@ -701,7 +709,7 @@
             "ဆရာ": "ဆရာကတော့ သမီးရဲ့ ဖေဖေ R.Lay နဲ့အတူ သမီးကို နည်းပညာတွေ သင်ကြားပေးခဲ့တဲ့ သမီးရဲ့ ဆရာကြီး ဖြစ်ပါတယ်ရှင့်။ အရမ်းတော်တာပဲ။",
             
             "သီချင်း": "သီချင်းနားဆင်ဖို့အတွက် အပေါ်က 'တေးသီချင်းများ' ကဏ္ဍက ကတ်ပြားလေးတွေကို နှိပ်လိုက်ရုံပါပဲရှင်။ သမီးလေးက သီချင်းဖွင့်ပေးပါ့မယ်နော်။",
-            "ဂိမ်း": "ဂိမ်းဆော့ချင်ရင် သမီးလေးရဲ့ အောက်တည့်တည့်မှာ 'Classic Snake Game' ရှိပါတယ်ရှင်။ ရမှတ်အများဆုံးရအောင် ကစားကြည့်နော်။",
+            "ဂိမ်း": "ဂိမ်းဆော့ချင်ရင် အပေါ်က 'အဆင့်မြင့် 3D ဂိမ်းပေါင်း (၁၀၀) ကျော်' ကဏ္ဍမှာ စိတ်ကြိုက် 3D ဂိမ်းကြီးတွေကို ရွေးချယ်ကစားနိုင်ပါတယ်ရှင်။",
             "ကြော်ငြာ": "ဝဘ်ဆိုက်ပေါ်မှာ ကြော်ငြာထည့်ချင်ရင် အောက်ဆုံးက Viber ခလုတ်လေးတွေကနေတစ်ဆင့် သမီးဖေဖေ R.Lay ဆီကို စာပို့ ဆက်သွယ်နိုင်ပါတယ်ရှင်။",
             "လုံခြုံရေး": "ဝဘ်ဆိုက်ရဲ့ လုံခြုံရေးကို နောက်ကွယ်ကနေ တကယ့် Cloudflare စနစ်အပြင် သမီးလေးကပါ မျက်စိမမှိတ်တမ်း စောင့်ကြည့်ပေးနေလို့ စိတ်ချရပါတယ်ရှင်။",
             
@@ -716,12 +724,10 @@
 
             const container = document.getElementById("botMessages");
             
-            // User message
             container.innerHTML += `<div class="msg user">${text}</div>`;
             input.value = "";
             container.scrollTop = container.scrollHeight;
 
-            // Bot reply logic
             let reply = "ဟိုလေ... လူကြီးမင်းမေးတဲ့ စကားလုံးလေးက အရမ်းနက်နဲလွန်းလို့ သမီး AI ဦးနှောက်လေး နည်းနည်း ရှုပ်သွားတယ်ရှင့် (မျက်တောင်ခတ် ခတ်)။ ဒါလေးကို သမီး ဖေဖေ R.Lay ပြန်လာရင် မေးပြီး ထပ်သင်ထားလိုက်ပါ့မယ်နော်။ လောလောဆယ် သမီးလေးကို တခြားအကြောင်းအရာလေးတွေ ပြောင်းမေးပေးပါဦးရှင်။ 🥺";
             
             for (let key in botBrain) {
@@ -737,14 +743,17 @@
             }, 400);
         }
 
-        // --- 🎵 AUDIO PLAYER BAR LOGIC ---
+        // --- 🎵 AUDIO PLAYER & NEON VISUALIZER LOGIC ---
         const audio = document.getElementById("mainAudio");
         const playerBar = document.getElementById("audioPlayerBar");
         const playerImg = document.getElementById("playerImg");
         const playerTitle = document.getElementById("playerTitle");
         const playerArtist = document.getElementById("playerArtist");
         const mainPlayBtn = document.getElementById("mainPlayBtn");
+        const visualizerStatus = document.getElementById("visualizerStatus");
+        const vBars = document.querySelectorAll(".v-bar");
         let currentCard = null;
+        let visualizerInterval = null;
 
         document.querySelectorAll(".audio-card").forEach(card => {
             card.addEventListener("click", () => {
@@ -793,112 +802,38 @@
                 playerBar.classList.add("playing");
                 mainPlayBtn.innerHTML = '<i class="fa-solid : fa-pause"></i>';
                 if (currentCard) currentCard.classList.add("playing");
+                visualizerStatus.innerText = `🎧 Now Playing: ${playerTitle.innerText}`;
+                startVisualizerAnimation();
             } else {
                 playerBar.classList.remove("playing");
                 mainPlayBtn.innerHTML = '<i class="fa-solid : fa-play"></i>';
                 if (currentCard) currentCard.classList.remove("playing");
+                visualizerStatus.innerText = "⏸️ တေးဂီတကို ခေတ္တရပ်ဆိုင်းထားပါသည်";
+                stopVisualizerAnimation();
             }
         }
 
-        // --- 🐍 CLASSIC SNAKE GAME LOGIC ---
-        const canvas = document.getElementById("gameCanvas");
-        const ctx = canvas.getContext("2d");
-        const gridSize = 15;
-        const tileCount = canvas.width / gridSize;
-
-        let snake = [{x: 10, y: 10}];
-        let food = {x: 5, y: 5};
-        let xVelocity = 1;
-        let yVelocity = 0;
-        let score = 0;
-        let highScore = localStorage.getItem("snakeHighScore") || 0;
-        document.getElementById("highScore").innerText = highScore;
-
-        let gameInterval;
-
-        function startGame() {
-            gameInterval = setInterval(updateGame, 150);
+        // Fake 3D Neon Visualizer Animation Logic
+        function startVisualizerAnimation() {
+            if (visualizerInterval) clearInterval(visualizerInterval);
+            visualizerInterval = setInterval(() => {
+                vBars.forEach(bar => {
+                    // Generate random heights to look like a music wave
+                    const randomHeight = Math.floor(Math.random() * 95) + 10;
+                    bar.style.height = `${randomHeight}px`;
+                    // Beautiful blinking reflection
+                    bar.style.opacity = Math.random() * 0.5 + 0.5;
+                });
+            }, 100);
         }
 
-        function updateGame() {
-            const head = {x: snake[0].x + xVelocity, y: snake[0].y + yVelocity};
-
-            // Wall Collision
-            if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-                return gameOver();
-            }
-
-            // Self Collision
-            for (let i = 0; i < snake.length; i++) {
-                if (head.x === snake[i].x && head.y === snake[i].y) return gameOver();
-            }
-
-            snake.unshift(head);
-
-            // Check Food Intake
-            if (head.x === food.x && head.y === food.y) {
-                score++;
-                document.getElementById("gameScore").innerText = score;
-                if (score > highScore) {
-                    highScore = score;
-                    localStorage.setItem("snakeHighScore", highScore);
-                    document.getElementById("highScore").innerText = highScore;
-                }
-                generateFood();
-            } else {
-                snake.pop();
-            }
-
-            drawGame();
+        function stopVisualizerAnimation() {
+            clearInterval(visualizerInterval);
+            vBars.forEach(bar => {
+                bar.style.height = "10px";
+                bar.style.opacity = "0.3";
+            });
         }
-
-        function drawGame() {
-            // Clear Canvas
-            ctx.fillStyle = "#090710";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Draw Snake
-            ctx.fillStyle = "#ff007f";
-            for (let i = 0; i < snake.length; i++) {
-                ctx.fillRect(snake[i].x * gridSize, snake[i].y * gridSize, gridSize - 2, gridSize - 2);
-            }
-
-            // Draw Food
-            ctx.fillStyle = "#00ffcc";
-            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
-        }
-
-        function generateFood() {
-            food.x = Math.floor(Math.random() * tileCount);
-            food.y = Math.floor(Math.random() * tileCount);
-        }
-
-        function gameOver() {
-            clearInterval(gameInterval);
-            alert("ဂိမ်းပြီးဆုံးသွားပါပြီ။ လူကြီးမင်း ရမှတ်ကတော့ " + score + " ပါရှင်။");
-            snake = [{x: 10, y: 10}];
-            xVelocity = 1; yVelocity = 0;
-            score = 0;
-            document.getElementById("gameScore").innerText = score;
-            startGame();
-        }
-
-        function changeDirection(dir) {
-            if (dir === 'up' && yVelocity !== 1) { xVelocity = 0; yVelocity = -1; }
-            if (dir === 'down' && yVelocity !== -1) { xVelocity = 0; yVelocity = 1; }
-            if (dir === 'left' && xVelocity !== 1) { xVelocity = -1; yVelocity = 0; }
-            if (dir === 'right' && xVelocity !== -1) { xVelocity = 1; yVelocity = 0; }
-        }
-
-        document.getElementById("btnUp").addEventListener("click", () => changeDirection('up'));
-        document.getElementById("btnDown").addEventListener("click", () => changeDirection('down'));
-        document.getElementById("btnLeft").addEventListener("click", () => changeDirection('left'));
-        document.getElementById("btnRight").addEventListener("click", () => changeDirection('right'));
-
-        window.onload = () => {
-            generateFood();
-            startGame();
-        };
     </script>
 </body>
-                    </html>
+                                                                   </html>
