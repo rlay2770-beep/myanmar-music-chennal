@@ -382,13 +382,55 @@
         </div>
     </div>
 </div>
+resetGame();
+</script>
+
+<div class="searchable-card" data-keywords="id bot ai security cctv camera live tracking စက်ရုပ် အစောင့်အရှောက်">
+    <div class="section-title" style="border-left-color: var(--viber-color); font-size: 1.3rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; color: #fff; border-left: 4px solid var(--viber-color); padding-left: 10px;">
+        <i class="fa-solid fa-robot"></i> id bot - AI Security & CCTV Room
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #141414, #222); border: 1px solid #333; border-radius: 16px; padding: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.5);">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #000; padding: 8px 12px; border-radius: 8px; border: 1px solid #444; margin-bottom: 12px;">
+            <span style="font-size: 0.8rem; color: #aaa;"><i class="fa-solid fa-robot"></i> System: <strong>id bot v2.0</strong></span>
+            <span style="font-size: 0.8rem; color: #2ecc71; font-weight: bold; display: flex; align-items: center; gap: 5px;">
+                <span style="width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; display: inline-block; animation: pulse 1s infinite;"></span> 24/7 ONLINE
+            </span>
+        </div>
+
+        <div style="position: relative; width: 100%; height: 160px; background: #050505; border: 2px solid #333; border-radius: 8px; overflow: hidden; margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
+            <div style="position: absolute; top: 8px; left: 8px; font-size: 0.7rem; color: #ff0000; font-weight: bold; background: rgba(0,0,0,0.6); padding: 2px 6px; border-radius: 3px; z-index: 5;">
+                ● LIVE - CAM 01
+            </div>
+            <div style="position: absolute; width: 100%; height: 2px; background: rgba(115, 96, 242, 0.4); top: 0; left: 0; animation: scan 3s linear infinite; z-index: 4;"></div>
+            
+            <i class="fa-solid fa-video" style="font-size: 2.5rem; color: #444; animation: blink 2s infinite;"></i>
+            <div id="cctv-status-text" style="position: absolute; bottom: 8px; font-size: 0.75rem; color: #888;">စနစ်အား id bot မှ ၂၄ နာရီ စောင့်ကြည့်နေပါသည်</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px;">
+            <button onclick="idBotCommand('scan')" style="background: #222; border: 1px solid #444; color: #fff; padding: 8px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-radar"></i> ဝဘ်ဆိုက်ကို စကင်ဖတ်ရန်</button>
+            <button onclick="idBotCommand('secure')" style="background: #222; border: 1px solid #444; color: #ff007f; padding: 8px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-shield-halved"></i> လုံခြုံရေးမြှင့်တင်ရန်</button>
+        </div>
+
+        <div id="idbot-chat-logs" style="height: 120px; background: #000; border: 1px solid #333; border-radius: 8px; padding: 10px; overflow-y: auto; font-size: 0.8rem; line-height: 1.4; margin-bottom: 10px; color: #ccc;">
+            <div style="color: #7b519d; margin-bottom: 5px;"><strong>[id bot]:</strong> မင်္ဂလာပါ အစ်ကိုကြီး R.Lay နှင့် ဝဘ်ဆိုက်လာ ဧည့်သည်တော်များခင်ဗျာ။ ကျွန်တော်ကတော့ အစောင့်အရှောက် id bot ဖြစ်ပါတယ်။ သိလိုသည်များကို အောက်တွင် မေးမြန်းနိုင်ပါတယ်ဗျာ။</div>
+        </div>
+
+        <div style="display: flex; gap: 6px;">
+            <input type="text" id="idbot-input" style="flex-grow: 1; padding: 10px; background: #000; border: 1px solid #444; border-radius: 6px; color: #fff; font-size: 0.8rem;" placeholder="id bot ကို စကားပြောရန်/မေးမြန်းရန်..." onkeypress="if(event.key === 'Enter') talkToIdBot()">
+            <button onclick="talkToIdBot()" style="background: #7b519d; color: #fff; border: none; padding: 0 15px; border-radius: 6px; font-weight: bold; font-size: 0.8rem; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
 
 <script>
     const idBotBrain = {
         "မင်္ဂလာပါ": "မင်္ဂလာပါ ခင်ဗျာ။ id bot မှ ကြိုဆိုပါတယ်။ လူကြီးမင်းအတွက် ဘာများ ကူညီပေးရမလဲဗျာ။",
         "နေကောင်းလား": "ကျွန်တော်က စက်ရုပ်ဆိုတော့ ဖျားနာခြင်းမရှိ၊ အမြဲတမ်း နေကောင်းကျန်းမာပြီး အသင့်ရှိနေပါတယ် အစ်ကိုကြီး။",
-        "သီချင်း": "သီချင်းနားဆင်ရန် အပေါ်က Play On TikTok ခလုတ်ကို နှိပ်နိုင်သလို၊ Song Request အကွက်မှာလည်း တောင်းဆိုနိုင်ပါတယ်ဗျာ။",
-        "ဂိမ်း": "ဂိမ်းကစားချင်ရင် အပေါ်က Classic Snake Game မှာ ကစားနိုင်သလို၊ CrazyGames ခလုတ်ကို နှိပ်ပြီး 3D ဂိမ်းတွေ သွားဆော့လို့ရပါတယ်ဗျာ။",
+        "သီချင်း": "သီချင်းနားဆင်ရန် အပေါ်က တေးသီချင်းများ ကဏ္ဍတွင် စိတ်ကြိုက် နှိပ်ပြီး နားဆင်နိုင်ပါတယ်ဗျာ။",
+        "ဂိမ်း": "ဂိမ်းကစားချင်ရင် အပေါ်က CrazyGames ခလုတ်ကို နှိပ်ပြီး အဆင့်မြင့် 3D ဂိမ်းတွေ သွားဆော့လို့ရပါတယ်ဗျာ။",
         "cctv": "စီစီတီဗွီ ကင်မရာစနစ်အားလုံး ပုံမှန်အလုပ်လုပ်နေပြီး ဝဘ်ဆိုက်လုံခြုံရေး စိတ်ချရပါတယ် ခင်ဗျာ။",
         "ဘယ်သူဖန်တီးတာလဲ": "ကျွန်တော့်ကို အစ်ကိုကြီး R.Lay နဲ့ ဆရာတို့ နှစ်ယောက် အတူတူ ပူးပေါင်းပြီး အဆင့်မြင့် ဖန်တီးမွေးမြူထားတာ ဖြစ်ပါတယ်ဗျာ။",
         "ကျေးဇူးပဲ": "ကျွန်တော့် တာဝန်ပါဗျာ။ ဝဘ်ဆိုက်မှာ ပျော်ရွှင်စွာ အချိန်ဖြုန်းနိုင်ပါစေ ခင်ဗျာ။"
@@ -400,12 +442,17 @@
         if(query === "") return;
         let chatLogs = document.getElementById("idbot-chat-logs");
         chatLogs.innerHTML += `<div style="margin-bottom: 5px; text-align: right; color: #fff;"><strong>[You]:</strong> ${query}</div>`;
+        
         let reply = "နားမလည်ပါဘူးခင်ဗျာ။ ကျွန်တော့်ကို စကားလုံးအသုံးအနှုန်း နည်းနည်း ပြောင်းပြီး မေးကြည့်ပေးပါဦးဗျာ။";
         for (let key in idBotBrain) {
-            if (query.toLowerCase().includes(key.toLowerCase())) { reply = idBotBrain[key]; break; }
+            if (query.toLowerCase().includes(key.toLowerCase())) { 
+                reply = idBotBrain[key]; 
+                break; 
+            }
         }
+        
         setTimeout(() => {
-            chatLogs.innerHTML += `<div style="color: var(--viber-color); margin-bottom: 5px;"><strong>[id bot]:</strong> ${reply}</div>`;
+            chatLogs.innerHTML += `<div style="color: #7b519d; margin-bottom: 5px;"><strong>[id bot]:</strong> ${reply}</div>`;
             chatLogs.scrollTop = chatLogs.scrollHeight;
         }, 400);
         inputEl.value = "";
@@ -415,27 +462,32 @@
         let statusText = document.getElementById("cctv-status-text");
         let chatLogs = document.getElementById("idbot-chat-logs");
         if(type === 'scan') {
-            statusText.innerText = "🔍 စနစ်တစ်ခုလုံးအား စကင်ဖတ်နေပါသည်..."; statusText.style.color = "var(--accent)";
+            statusText.innerText = "🔍 စနစ်တစ်ခုလုံးအား စကင်ဖတ်နေပါသည်..."; 
+            statusText.style.color = "#ff007f";
             setTimeout(() => {
-                statusText.innerText = "✅ စကင်ဖတ်ခြင်းအောင်မြင်သည်။ မသင်္ကာဖွယ်ရာ မရှိပါ။"; statusText.style.color = "#2ecc71";
+                statusText.innerText = "✅ စကင်ဖတ်ခြင်းအောင်မြင်သည်။ မသင်္ကာဖွယ်ရာ မရှိပါ။"; 
+                statusText.style.color = "#2ecc71";
                 chatLogs.innerHTML += `<div style="color: #2ecc71; margin-bottom: 5px;"><strong>[System Log]:</strong> ဝဘ်ဆိုက်ဖိုင်များအားလုံး ၁၀၀% ကာကွယ်မှု ရှိနေပါသည်။</div>`;
                 chatLogs.scrollTop = chatLogs.scrollHeight;
             }, 1500);
         } else if(type === 'secure') {
-            statusText.innerText = "🛡️ AI Firewall စနစ်အား အမြင့်ဆုံး မြှင့်တင်နေသည်..."; statusText.style.color = "var(--tiktok-color)";
+            statusText.innerText = "🛡️ AI Firewall စနစ်အား အမြင့်ဆုံး မြှင့်တင်နေသည်..."; 
+            statusText.style.color = "#7b519d";
             setTimeout(() => {
-                statusText.innerText = "🔒 ลုံခြုံရေး မီးတံတိုင်းအား အပြည့်အဝ ချိတ်ပိတ်ပြီးပါပြီ။"; statusText.style.color = "#2ecc71";
-                chatLogs.innerHTML += `<div style="color: var(--accent); margin-bottom: 5px;"><strong>[System Log]:</strong> Stealth Security Active ဖြစ်သွားပါပြီ။</div>`;
+                statusText.innerText = "🔒 လုံခြုံရေး မီးတံတိုင်းအား အပြည့်အဝ ချိတ်ပိတ်ပြီးပါပြီ။"; 
+                statusText.style.color = "#2ecc71";
+                chatLogs.innerHTML += `<div style="color: #ff007f; margin-bottom: 5px;"><strong>[System Log]:</strong> Stealth Security Active ဖြစ်သွားပါပြီ။</div>`;
                 chatLogs.scrollTop = chatLogs.scrollHeight;
             }, 1500);
         }
+    }
 </script>
 
 <style>
     @keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
     @keyframes blink { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
+    @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.95); opacity: 0.5; } }
 </style>
 
-<!-- 🚨 ဝဘ်ဆိုက်တစ်ခုလုံး၏ ပိတ်သိမ်းခြင်း သတ်မှတ်ချက်များ (အောက်ဆုံးပိတ်လိုင်း) -->
 </body>
 </html>
