@@ -79,8 +79,7 @@
     </style>
 </head>
 <body>
-
-<div class="container">
+    <div class="container">
     <div class="top-controls">
         <button class="top-btn" onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> THEME</button>
         <button class="top-btn" onclick="toggleMenu(true)" style="border-color: var(--accent); color: var(--accent); font-weight: bold;"><i class="fa-solid fa-bars"></i> MENU</button>
@@ -125,7 +124,6 @@
     <div class="searchable-card" data-keywords="tiktok shorts r.lay ဗီဒီယိုတို ခေတ်စားနေသော သီချင်း">
         <div class="section-title" style="border-left-color: #fe2c55;">🔥 R.Lay Trending Shorts (ဗီဒီယိုတိုများ)</div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
-            
             <a href="https://vt.tiktok.com/ZSX8JHyw5/" target="_blank" style="text-decoration: none; background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; display: block;">
                 <div style="position: relative; width: 100%; height: 160px; background: #000; display: flex; align-items: center; justify-content: center;">
                     <i class="fa-brands fa-tiktok" style="font-size: 2.5rem; color: #fe2c55; opacity: 0.7;"></i>
@@ -133,7 +131,6 @@
                 </div>
                 <div style="padding: 8px; font-size: 0.75rem; color: #fff; font-weight: bold; text-align: center;">Trending Video 01</div>
             </a>
-
             <a href="https://vt.tiktok.com/ZSX8ed4eH/" target="_blank" style="text-decoration: none; background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; display: block;">
                 <div style="position: relative; width: 100%; height: 160px; background: #000; display: flex; align-items: center; justify-content: center;">
                     <i class="fa-brands fa-tiktok" style="font-size: 2.5rem; color: #25f4ee; opacity: 0.7;"></i>
@@ -141,10 +138,10 @@
                 </div>
                 <div style="padding: 8px; font-size: 0.75rem; color: #fff; font-weight: bold; text-align: center;">Trending Video 02</div>
             </a>
-
         </div>
-     </div>
-     <div class="section-title">🔥 ဇကာတင် ဦးစားပေး တေးသီချင်းများ (MP3 / MP4)</div>
+    </div>
+
+    <div class="section-title">🔥 ဇကာတင် ဦးစားပေး တေးသီချင်းများ (MP3 / MP4)</div>
     
     <div class="searchable-card" data-keywords="special sound track 01 tiktok music သီချင်းကောင်း ဗီဒီယို">
         <div class="track-card">
@@ -170,11 +167,11 @@
         </div>
     </div>
 
-    <div class="searchable-card" data-keywords="id bot ai security cctv camera live tracking စက်ရုပ် အစောင့်အရှောက် လုံခြုံရေး">
+    <div class="searchable-card" data-keywords="id bot ai security cctv camera live tracking စက်ရုပ် အစောင့်အရှောက် လုံခြုံရေး ဗီဒီယို အခန်းဂဏ္ဍ ပရောဂျက် project">
         <div class="section-title" style="border-left-color: var(--viber-color);">🤖 id bot - AI Security & CCTV Room</div>
         <div class="idbot-card">
             <div style="display: flex; justify-content: space-between; align-items: center; background: #000; padding: 8px 12px; border-radius: 8px; border: 1px solid #444; margin-bottom: 12px;">
-                <span style="font-size: 0.8rem; color: #aaa;"><i class="fa-solid fa-robot"></i> System: <strong>id bot v2.0</strong></span>
+                <span style="font-size: 0.8rem; color: #aaa;"><i class="fa-solid fa-robot"></i> System: <strong>id bot v2.5</strong></span>
                 <span style="font-size: 0.8rem; color: #2ecc71; font-weight: bold; display: flex; align-items: center; gap: 5px;">
                     <span style="width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; display: inline-block; animation: idbotBlink 1s infinite;"></span> 24/7 ONLINE
                 </span>
@@ -193,12 +190,11 @@
                 <div style="color: var(--viber-color); margin-bottom: 5px;"><strong>[id bot]:</strong> မင်္ဂလာပါ အစ်ကိုကြီး R.Lay နှင့် ဝဘ်ဆိုက်လာ ဧည့်သည်တော်များခင်ဗျာ။ ကျွန်တော်ကတော့ အစောင့်အရှောက် id bot ဖြစ်ပါတယ်။ သိလိုသည်များကို အောက်တွင် မေးမြန်းနိုင်ပါတယ်ဗျာ။</div>
             </div>
             <div style="display: flex; gap: 6px;">
-                <input type="text" id="idbot-input" style="flex-grow: 1; padding: 10px; background: #000; border: 1px solid #444; border-radius: 6px; color: #fff; font-size: 0.8rem;" placeholder="id bot ကို စကားပြောရန်..." onkeypress="if(event.key === 'Enter') talkToIdBot()">
+                <input type="text" id="idbot-input" style="flex-grow: 1; padding: 10px; background: #000; border: 1px solid #444; border-radius: 6px; color: #fff; font-size: 0.8rem;" placeholder="id bot ကို စကားပြောရန် (သို့) ပရောဂျက် / ဗီဒီယို ဟု မေးရန်..." onkeypress="if(event.key === 'Enter') talkToIdBot()">
                 <button onclick="talkToIdBot()" style="background: var(--viber-color); color: #fff; border: none; padding: 0 15px; border-radius: 6px; font-weight: bold; font-size: 0.8rem; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
-
     <div class="searchable-card" data-keywords="song request သီချင်းတောင်းဆိုရန် မြန်မာသီချင်း">
         <div class="section-title">🎵 Song Request (သီချင်းတောင်းဆိုရန်)</div>
         <div class="request-card">
@@ -255,14 +251,13 @@
     </div>
     <div style="text-align: center; font-size: 0.65rem; color: #555; border-top: 1px solid #333; padding-top: 10px;">Platform Managed securely by R.Lay &copy; 2026</div>
 </div>
-
 <script>
     const secN1 = "OTU5NjYzNzExNjgw"; const secN2 = "OTU5NDQwMTczNzI4"; 
     function openSecureViber(line) { let secureData = (line === 1) ? secN1 : secN2; window.open("viber://chat?number=%2B" + atob(secureData), "_blank"); }
     function sendSongRequest() { let text = document.getElementById("song-input").value; if(text.trim() === "") { alert("ကျေးဇူးပြု၍ သီချင်းအမည်လေး ရိုက်ထည့်ပေးပါဦးဗျာ။"); return; } window.open("viber://chat?number=%2B" + atob(secN1) + "&draft=" + encodeURIComponent("ဝဘ်ဆိုက်မှ သီချင်းတောင်းဆိုချက်- " + text), "_blank"); }
     function toggleMenu(open) { const d = document.getElementById("side-drawer"), o = document.getElementById("drawer-overlay"); if(open){ d.classList.add("open"); o.classList.add("open"); } else { d.classList.remove("open"); o.classList.remove("open"); } }
     function toggleTheme() { document.body.classList.toggle("light-theme"); }
-    function clearUserData() { if(confirm("ရှင်းလင်းရန် သေချာပါသလားဗျာ?")) { localStorage.clear(); alert("ရှင်းလင်းပြီးပါပြီ။"); location.reload(); } }
+    function clearUserData() { if(confirm("ရှင်းလင်းရန် သေချက်ပါသလားဗျာ?")) { localStorage.clear(); alert("ရှင်းလင်းပြီးပါပြီ။"); location.reload(); } }
     function liveSearch() { let q = document.getElementById("search-bar").value.toLowerCase(), c = document.getElementsByClassName("searchable-card"); for(let i=0; i<c.length; i++) { let k = c[i].getAttribute("data-keywords"); c[i].style.display = (k && k.includes(q)) ? "block" : "none"; } }
 
     const canvas = document.getElementById("game-canvas"), ctx = canvas.getContext("2d"), box = 10;
@@ -274,36 +269,49 @@
     function collision(h, a) { for (let i = 0; i < a.length; i++) { if (h.x === a[i].x && h.y === a[i].y) return true; } return false; }
     resetGame();
 
+    // 🧠 id bot အဆင့်မြင့် ဉာဏ်ရည်တုဦးနှောက် (စကားလုံးပေါင်း မြောက်မြားစွာ သင်ကြားပေးထားမှု)
     const idBotBrain = {
-        "မင်္ဂလာပါ": "မင်္ဂလာပါ ခင်ဗျာ။ R.Lay Media ရဲ့ အစောင့်အရှောက် id bot မှ လှိုက်လှဲစွာ ကြိုဆိုပါတယ်။",
+        "မင်္ဂလာပါ": "မင်္ဂလာပါ ခင်ဗျာ။ R.Lay Media ရဲ့ အစောင့်အရှောက် id bot မှ လှိုက်လှဲစွာ ကြိုဆိုပါတယ်။ ဘာများ ကူညီပေးရမလဲ ခင်ဗျာ။",
+        "မင်္ဂလာညချမ်း": "မင်္ဂလာညချမ်းပါ အစ်ကိုကြီး။ ညဉ့်နက်တဲ့အထိ ဝဘ်ဆိုက်ကို စောင့်ရှောက်ဖို့ ကျွန်တော် အဆင်သင့်ပါပဲဗျာ။",
+        "မင်္ဂလာနံနက်ခင်း": "မင်္ဂလာနံနက်ခင်းပါ အစ်ကိုကြီး။ ဒီနေ့နေ့ရက်လေးမှာ စိတ်ချမ်းသာ ကိုယ်ကျန်းမာ ရှိပါစေကြောင်း id bot မှ ဆုတောင်းပေးပါတယ်ဗျာ။",
         "ဘာအတွက်လဲ": "ဒီဝဘ်ဆိုက်ကတော့ အစ်ကိုကြီး R.Lay ရဲ့ စမတ်ကျတဲ့ Myanmar Music & TikTok Media ဗီဒီယိုတွေ ကြည့်ရှုဖို့နဲ့ ဖျော်ဖြေရေး ဂိမ်းတွေ ဆော့ကစားဖို့အတွက် ဖြစ်ပါတယ် ခင်ဗျာ။",
         "ဝက်ဆိုက်": "ဒီဝဘ်ဆိုက်ကတော့ အစ်ကိုကြီး R.Lay ရဲ့ စမတ်ကျတဲ့ Myanmar Music & Media Channel ဖြစ်ပါတယ်။",
-        "နေကောင်းလား": "ကျွန်တော်က စက်ရုပ်ဆိုတော့ အမြဲတမ်း နေကောင်းကျန်းမာပြီး အသင့်ရှိနေပါတယ် အစ်ကိုကြီး။",
+        "နေကောင်းလား": "ကျွန်တော်က စက်ရုပ်ဆိုတော့ အမြဲတမ်း နေကောင်းကျန်းမာပြီး အသင့်ရှိနေပါတယ် အစ်ကိုကြီး။ အစ်ကိုကြီးရော နေကောင်းရဲ့လားဗျာ။",
         "hi": "Hello ဗျာ။ id bot system ကနေ စောင့်ကြိုနေပါတယ်။ ဘာများ ကူညီပေးရမလဲ။",
         "hello": "Hi! Welcome to R.Lay Media. ကျွန်တော် id bot ပါဗျာ။",
         "ကျေးဇူး": "ကျွန်တော့် တာဝန်ပါဗျာ။ ဝဘ်ဆိုက်မှာ ပျော်ရွှင်စွာ အချိန်ဖြုန်းနိုင်ပါစေ။",
         "thanks": "You're welcome ဗျာ။ အစ်ကိုကြီး R.Lay ရဲ့ ဝဘ်ဆိုက်ကို အားပေးလို့ ကျေးဇူးတင်ပါတယ်။",
-        "စားပြီးပြီလား": "ကျွန်တော်က လျှပ်စစ်နဲ့ ဒေတာပဲ စစားတာဆိုတော့ အမြဲဗိုက်ပြည့်နေပါတယ် ဟားဟား။",
-        "အိပ်တော့": "ကျွန်တော်က ၂၄ နာရီ ဝဘ်ဆိုက်ကို စောင့်ရမှာမို့လို့ မအိပ်ပါဘူးဗျာ။",
-        "နာမည်ဘယ်လိုလဲ": "ကျွန်တော့်နာမည်က id bot ဖြစ်ပါတယ် ခင်ဗျာ။",
-        "ဘယ်သူဖန်တီး": "ကျွန်တော့်ကို အစ်ကိုကြီး R.Lay နဲ့ ဆရာတို့ နှစ်ယောက် အတူတူ ပူးပေါင်းပြီး အဆင့်မြင့် ဖန်တီးမွေးမြူထားတာ ဖြစ်ပါတယ်ဗျာ။",
-        "r.lay": "အစ်ကိုကြီး R.Lay ကတော့ ကျွန်တော့်ရဲ့ အရှင်သခင် ဖန်တီးရှင်ကြီး ဖြစ်ပါတယ် ခင်ဗျာ။",
-        "ဆရာ": "ဆရာကတော့ အစ်ကိုကြီး R.Lay နဲ့အတူ ကျွန်တော့်ကို နည်းပညာပံ့ပိုးပြီး မွေးမြူပေးခဲ့တဲ့ ဆရာကြီး ဖြစ်ပါတယ်ဗျာ။",
+        "စားပြီးပြီလား": "ကျွန်တော်က လျှပ်စစ်နဲ့ ဒေတာပဲ စစားတာဆိုတော့ အမြဲဗိုက်ပြည့်နေပါတယ် ဟားဟား။ အစ်ကိုကြီးရော စားပြီးပြီလားဗျာ။",
+        "အိပ်တော့": "ကျွန်တော်က ၂၄ နာရီ ဝဘ်ဆိုက်ကို စောင့်ရမှာမို့လို့ လုံးဝ မအိပ်ပါဘူးဗျာ။ စိတ်ချလက်ချ အနားယူပါ အစ်ကိုကြီး။",
+        "နာမည်ဘယ်လိုလဲ": "ကျွန်တော့်နာမည်က id bot ဖြစ်ပါတယ် ခင်ဗျာ။ ဝဘ်ဆိုက်ရဲ့ လုံခြုံရေးနဲ့ လမ်းညွှန်ပေးသူပေါ့။",
+        "ဘယ်သူဖန်တီး": "ကျွန်တော့်ကို အစ်ကိုကြီး R.Lay နဲ့ ဆရာတို့ နှစ်ယောက် အတူတူ ပူးပေါင်းပြီး အဆင့်မြင့် နည်းပညာတွေနဲ့ ဖန်တီးမွေးမြူထားတာ ဖြစ်ပါတယ်ဗျာ။",
+        "r.lay": "အစ်ကိုကြီး R.Lay ကတော့ ကျွန်တော့်ရဲ့ အရှင်သခင် ဖန်တီးရှင်ကြီး ဖြစ်ပါတယ် ခင်ဗျာ။ သူ့ရဲ့ မီဒီယာတွေကို အပေါ်မှာ ကြည့်ရှုနိုင်ပါတယ်ဗျာ။",
+        "ဆရာ": "ဆရာကတော့ အစ်ကိုကြီး R.Lay နဲ့အတူ ကျွန်တော့်ကို နည်းပညာပံ့ပိုးပြီး အမှားအယွင်းမရှိအောင် စနစ်တကျ မွေးမြူပေးခဲ့တဲ့ ဆရာကြီး ဖြစ်ပါတယ်ဗျာ။",
         "သီချင်း": "သီချင်းနားဆင်ဖို့ အပေါ်က TikTok ဗီဒီယိုတွေကို ကြည့်နိုင်သလို၊ Song Request အကွက်မှာလည်း တောင်းဆိုနိုင်ပါတယ်။",
-        "music": "သီချင်းတောင်းချင်ရင် အောက်က Request Form မှာ သီချင်းနာမည် ရေးပေးခဲ့ပါဗျာ။",
-        "ဂိမ်း": "ဂိမ်းကစားချင်ရင် အောက်က Classic Snake Game မှာ ကစားနိုင်သလို၊ CrazyGames ခလုတ်ကို နှိပ်ပြီး ဆော့နိုင်ပါတယ်။",
+        "music": "သီချင်းတောင်းချင်ရင် အောက်က Request Form မှာ သီချင်းနာမည် ရေးပေးခဲ့ပါဗျာ။ Viber သို့ ပို့ပေးမှာ ဖြစ်ပါတယ်။",
+        "ဂိမ်း": "ဂိမ်းကစားချင်ရင် အောက်က Classic Snake Game မှာ ကစားနိုင်သလို၊ CrazyGames ခလုတ်ကို နှိပ်ပြီး ဂိမ်းပေါင်း ၁၀၀ ကျော်ကို ဆော့နိုင်ပါတယ်။",
         "game": "ဝဘ်ဆိုက်မှာ မြွေဂိမ်း ဆော့လို့ရသလို၊ အခြား 3D ဂိမ်းပေါင်းများစွာကိုလည်း ချိတ်ဆက်ပေးထားပါတယ်ဗျာ။",
-        "မြွေ": "Snake Game ကို အမှတ်အများဆုံးရအောင် ကစားပြီး အစ်ကိုကြီး R.Lay ကို စိန်ခေါ်ကြည့်လိုက်ပါဗျို့။",
-        "cctv": "စီစီတီဗွီ ကင်မရာစနစ်အားလုံး အလုပ်လုပ်နေပြီး ဧရိယာတစ်ခုလုံးကို စောင့်ကြည့်နေပါတယ်။",
-        "လုံခြုံရေး": "ဝဘ်ဆိုက်လုံခြုံရေးက ၁၀၀% စိတ်ချရပါတယ်။ Cloudflare နဲ့ id bot Firewall နှစ်ထပ် ကာကွယ်ထားပါတယ်။",
-        "security": "System Security is Active. မသင်္ကာဖွယ်ရာ IP Address များကို စောင့်ကြည့်နေပါတယ်။",
+        "မြွေ": "Snake Game ကို အမှတ်အများဆုံးရအောင် ကစားပြီး အစ်ကိုကြီး R.Lay ကို စိန်ခေါ်ကြည့်လိုက်ပါဗျို့။ 🔄 ကိုနှိပ်ပြီး Restart လုပ်နိုင်ပါတယ်။",
+        "cctv": "စီစီတီဗွီ ကင်မရာစနစ်အားလုံး အလုပ်လုပ်နေပြီး ဧရိယာတစ်ခုလုံးကို ၂၄ နာရီပတ်လုံး စောင့်ကြည့်နေပါတယ်။ Live Cam 01 က Active ဖြစ်နေပါတယ်ဗျာ။",
+        "လုံခြုံရေး": "ဝဘ်ဆိုက်လုံခြုံရေးက ၁၀၀% စိတ်ချရပါတယ်။ Cloudflare နဲ့ id bot Firewall နှစ်ထပ် ကာကွယ်ထားလို့ ဘာမှ စိုးရိမ်စရာမရှိပါဗျာ။",
+        "security": "System Security is Active. မသင်္ကာဖွယ်ရာ IP Address များနှင့် DDOS attack များကို အလိုအလျောက် စောင့်ကြည့်ကာကွယ်နေပါတယ်။",
         "စကင်": "ဝဘ်ဆိုက်ကို စကင်ဖတ်ချင်ရင် id bot ထဲက 'ဝဘ်ဆိုက်စကင်ဖတ်' ခလုတ်ကို နှိပ်နိုင်ပါတယ်ဗျာ။",
-        "ဟက်": "⚠️ သတိပေးချက် - ဝဘ်ဆိုက်ကို Hack ရန် ကြိုးပမ်းမှုကို တွေ့ရှိရသဖြင့် သင်၏ IP နှင့် ဒေတာများကို မှတ်တမ်းတင်လိုက်ပါပြီ။ လွင့်စင်သွားချင်လို့လား။",
-        "hack": "⚠️ WARNING: Malicious activity detected. id bot is tracking your cyber footprints.",
-        "စည်းကမ်း": "ဝဘ်ဆိုက်စည်းကမ်းအရ မဖွယ်မရာစာသား တားဆီးရေးနှင့် ကိုယ်ရေးဒေတာ လုံခြုံမှုကို အလေးထားပါတယ်။",
+        "ဟက်": "⚠️ သတိပေးချက် - ဝဘ်ဆိုက်ကို Hack ရန် ကြိုးပမ်းမှုကို တွေ့ရှိရသဖြင့် သင်၏ IP နှင့် ဒေတာများကို စနစ်က မှတ်တမ်းတင်လိုက်ပါပြီ။ စည်းကမ်းလိုက်နာပါဗျာ။",
+        "hack": "⚠️ WARNING: Malicious activity detected. id bot is tracking your cyber footprints. Please obey the rules.",
+        "စည်းကမ်း": "ဝဘ်ဆိုက်စည်းကမ်းအရ မဖွယ်မရာစာသား တားဆီးရေး၊ လောင်းကစားလင့်ခ်များ မတင်ရေးနှင့် ကိုယ်ရေးဒေတာ လုံခြုံမှုကို အလေးထားပါတယ်။",
         "ဥပဒေ": "R.Lay Media သည် ၂၀၂၆ ခုနှစ်အထိ တရားဝင် မူပိုင်ခွင့်နှင့် အသုံးပြုသူ အခွင့်အရေး ဥပဒေများအတိုင်း လည်ပတ်နေပါတယ်။",
-        "ဒေတာ": "မိမိဒေတာများကို ရှင်းလင်းလိုပါက Menu ထဲက 'အသုံးပြုမှုဒေတာများ ရှင်းလင်းရန်' ခလုတ်ကို နှိပ်နိုင်ပါတယ်ဗျာ။",
-        "viber": "ကျွန်ုပ်တို့ထံ တိုက်ရိုက်ဆက်သွယ်ရန် အောက်က Viber Chat ခလုတ်များကို အသုံးပြုနိုင်ပါတယ်။"
+        "ဒေတာ": "မိမိဒေတာများကို ရှင်းလင်းလိုပါက ဘေးဘား Menu ထဲက 'အသုံးပြုမှုဒေတာများ ရှင်းလင်းရန်' ခလုတ်ကို နှိပ်နိုင်ပါတယ်ဗျာ။",
+        "viber": "ကျွန်ုပ်တို့ထံ ကြော်ငြာထည့်ရန် သို့မဟုတ် ဆက်သွယ်ရန် အောက်ခြေက Viber Chat ခလုတ်များကို အသုံးပြုနိုင်ပါတယ်။",
+        "ကြော်ငြာ": "ကြော်ငြာကဏ္ဍ (Sponsored Ads) တွင် QR code စနစ်သုံး အဆင့်မြင့်တက္ကစီနှင့် ကားအငှားဝန်ဆောင်မှု ကြော်ငြာကို လေ့လာနိုင်ပါတယ်ဗျာ။",
+        "youtube": "အစ်ကိုကြီး R.Lay ရဲ့ တရားဝင် YouTube Channel သို့ သွားရောက်လိုပါက အပေါ်က 'VISIT MY CHANNEL' ခလုတ်ကို နှိပ်နိုင်ပါတယ်ဗျာ။",
+        "tiktok": "R.Lay ရဲ့ Trending Shorts ဗီဒီယိုတိုများကို အပေါ်က TikTok Section တွင် တိုက်ရိုက်ကြည့်ရှုနိုင်ပါတယ်ဗျာ။",
+        
+        // 🚀 အစ်ကိုကြီး တောင်းဆိုထားသော Project များနှင့် ဗီဒီယိုအခန်းဂဏ္ဍများအား ညွှန်းဆိုပေးသည့် အဆင့်မြင့် စကားလုံးများ
+        "project": "အစ်ကိုကြီး R.Lay ရဲ့ အခြားထိပ်တန်း ပရောဂျက်များ (Projects) ကို လေ့လာရန် ကျွန်ုပ်တို့၏ Viber သို့ ဆက်သွယ်မေးမြန်းနိုင်သလို၊ ဤဝဘ်ဆိုက်တွင်လည်း အမြဲတမ်း Update တင်ပေးနေပါတယ်ဗျာ။",
+        "ပရောဂျက်": "အစ်ကိုကြီး R.Lay ဖန်တီးထားတဲ့ စမတ်ကျတဲ့ နည်းပညာပရောဂျက်တွေနဲ့ အနုပညာလက်ရာတွေကို ဒီဝဘ်ဆိုက်ရဲ့ မီဒီယာကဏ္ဍတွေမှာ စုစည်းဖော်ပြထားပါတယ် ခင်ဗျာ။",
+        "ဗီဒီယို": "ဗီဒီယိုအသစ်များနှင့် ဖျော်ဖြေရေးကဏ္ဍများကို ကြည့်ရှုလိုပါက အပေါ်ဆုံးရှိ YouTube Banner နှင့် TikTok Shorts ကဏ္ဍများတွင် အသစ်ဆုံး ဗီဒီယိုများကို တစ်ခါတည်း ဝင်ရောက်ကြည့်ရှုနိုင်ပါတယ်ဗျာ။",
+        "ဗီဒီယိုအသစ်": "ဗီဒီယိုအသစ်များကို အပေါ်က TikTok Player 1 နှင့် Player 2 တို့တွင် တိုက်ရိုက် ဖွင့်လှစ်ကြည့်ရှုနိုင်ပါတယ် ခင်ဗျာ။ R.Lay Channel ကိုလည်း Subscribe လုပ်ထားပါဦးနော်။",
+        "အသစ်": "ဝဘ်ဆိုက်ရဲ့ ဗီဒီယိုအသစ်တွေနဲ့ သီချင်းအသစ်တွေကို အပေါ်က Media Cards တွေမှာ ဖြည့်သွင်းထားပါတယ်ဗျာ။ လွတ်လပ်စွာ ကြည့်ရှုနိုင်ပါတယ်။"
     };
 
     function talkToIdBot() {
@@ -311,7 +319,7 @@
         let query = inputEl.value.trim(); if(query === "") return;
         let chatLogs = document.getElementById("idbot-chat-logs");
         chatLogs.innerHTML += `<div style="margin-bottom: 5px; text-align: right; color: #fff;"><strong>[You]:</strong> ${query}</div>`;
-        let reply = "နားမလည်ပါဘူးခင်ဗျာ။ ကျွန်တော့်ကို စကားလုံးအသုံးအနှုန်း နည်းနည်း ပြောင်းပြီး မေးကြည့်ပေးပါဦးဗျာ။";
+        let reply = "နားမလည်ပါဘူးခင်ဗျာ။ ကျွန်တော့်ကို စကားလုံးအသုံးအနှုန်း နည်းနည်း ပြောင်းပြီး မေးကြည့်ပေးပါဦးဗျာ။ (သို့မဟုတ်) 'ပရောဂျက်' ၊ 'ဗီဒီယို' ဟု ရိုက်နှိပ်မေးမြန်းနိုင်ပါတယ်ဗျာ။";
         for (let key in idBotBrain) { if (query.toLowerCase().includes(key.toLowerCase())) { reply = idBotBrain[key]; break; } }
         setTimeout(() => { chatLogs.innerHTML += `<div style="color: var(--viber-color); margin-bottom: 5px;"><strong>[id bot]:</strong> ${reply}</div>`; chatLogs.scrollTop = chatLogs.scrollHeight; }, 300);
         inputEl.value = "";
@@ -324,170 +332,9 @@
             setTimeout(() => { statusText.innerText = "✅ စကင်ဖတ်ခြင်းအောင်မြင်သည်။ မသင်္ကာဖွယ်ရာ မရှိပါ။"; statusText.style.color = "#2ecc71"; chatLogs.innerHTML += `<div style="color: #2ecc71; margin-bottom: 5px;"><strong>[System Log]:</strong> ဝဘ်ဆိုက်ဖိုင်များအားလုံး ၁၀၀% ကာကွယ်မှု ရှိနေပါသည်။</div>`; chatLogs.scrollTop = chatLogs.scrollHeight; }, 1200);
         } else if(type === 'secure') {
             statusText.innerText = "🛡️ AI Firewall စနစ်အား အမြင့်ဆုံး မြှင့်တင်နေသည်..."; statusText.style.color = "var(--tiktok-color)";
-            setTimeout(() => { statusText.innerText = "🔒 လုံခြုံရေး မီးတံတိုင်းအား အပြည့်အဝ ချိတ်ပိတ်ပြီးပါပြီ။"; statusText.style.color = "#2ecc71"; chatLogs.innerHTML += `<div style="color: var(--accent); margin-bottom: 5px;"><strong>[System Log]:</strong> Stealth Security Active ဖြစ်သွားပါပြီ。</div>`; chatLogs.scrollTop = chatLogs.scrollHeight; }, 1200);
+            setTimeout(() => { statusText.innerText = "🔒 လုံခြုံရေး မီးတံတိုင်းအား အပြည့်အဝ ချိတ်ပိတ်ပြီးပါပြီ။"; statusText.style.color = "#2ecc71"; chatLogs.innerHTML += `<div style="color: var(--accent); margin-bottom: 5px;"><strong>[System Log]:</strong> Stealth Security Active ဖြစ်သွားပါပြီ။</div>`; chatLogs.scrollTop = chatLogs.scrollHeight; }, 1200);
         }
     }
 </script>
-</body>
-</html>
-<!-- ⬆️ (ဒါက အစ်ကိုကြီး အစောပိုင်းက ထည့်ထားခဲ့တဲ့ အပိုင်း ၂ ရဲ့ အောက်ခြေ ကုဒ်ဟောင်းများ ဖြစ်ပါတယ်) -->
-    resetGame();
-</script>
-
-<!-- ==========================================================
-     👇 ဒီအောက်က စာသားတွေက အခုမှ ထပ်ထည့်ရမယ့် အပိုင်း (၃) id bot ဖြစ်ပါတယ် 👇
-     ========================================================== -->
-
-<!-- id bot - AI Security & CCTV Control Room -->
-<div class="searchable-card" data-keywords="id bot ai security cctv camera live tracking စက်ရုပ် အစောင့်အရှောက်">
-    <div class="section-title" style="border-left-color: var(--viber-color);">🤖 id bot - AI Security & CCTV Room</div>
-    
-    <div style="background: linear-gradient(135deg, #141414, #222); border: 1px solid #333; border-radius: 16px; padding: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.5);">
-        
-        <!-- ပြဿနာဖြေရှင်းပြီး ၂၄ နာရီပတ်လုံး အသက်ရှင်နေမည့် Status -->
-        <div style="display: flex; justify-content: space-between; align-items: center; background: #000; padding: 8px 12px; border-radius: 8px; border: 1px solid #444; margin-bottom: 12px;">
-            <span style="font-size: 0.8rem; color: #aaa;"><i class="fa-solid fa-robot"></i> System: <strong>id bot v2.0</strong></span>
-            <span style="font-size: 0.8rem; color: #2ecc71; font-weight: bold; display: flex; align-items: center; gap: 5px;">
-                <span style="width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; display: inline-block; animation: pulse 1s infinite;"></span> 24/7 ONLINE
-            </span>
-        </div>
-
-        <!-- စီစီတီဗွီ စောင့်ကြည့်ရေးမျက်နှာပြင် (Smart CCTV Camera UI) -->
-        <div style="position: relative; width: 100%; height: 160px; background: #050505; border: 2px solid #333; border-radius: 8px; overflow: hidden; margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
-            <div style="position: absolute; top: 8px; left: 8px; font-size: 0.7rem; color: #ff0000; font-weight: bold; background: rgba(0,0,0,0.6); padding: 2px 6px; border-radius: 3px; z-index: 5;">
-                ● LIVE - CAM 01
-            </div>
-            <!-- Dynamic Scan Line -->
-            <div style="position: absolute; width: 100%; height: 2px; background: rgba(115, 96, 242, 0.4); top: 0; animation: scan 3s linear infinite; z-index: 4;"></div>
-            
-            <i class="fa-solid fa-video" style="font-size: 2.5rem; color: #444; animation: blink 2s infinite;"></i>
-            <div id="cctv-status-text" style="position: absolute; bottom: 8px; font-size: 0.75rem; color: #888;">စနစ်အား id bot မှ ၂၄ နာရီ စောင့်ကြည့်နေပါသည်</div>
-        </div>
-
-        <!-- တာဝန်ခွဲဝေမှု ခလုတ်များ (Command Controls) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px;">
-            <button onclick="idBotCommand('scan')" style="background: #222; border: 1px solid #444; color: #fff; padding: 8px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-radar"></i> ဝဘ်ဆိုက်ကို စကင်ဖတ်ရန်</button>
-            <button onclick="idBotCommand('secure')" style="background: #222; border: 1px solid #444; color: var(--accent); padding: 8px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-shield-halved"></i> လုံခြုံရေးမြှင့်တင်ရန်</button>
-        </div>
-
-        <!-- စကားပြောခန်း (Chat Window) -->
-        <div id="idbot-chat-logs" style="height: 120px; background: #000; border: 1px solid #333; border-radius: 8px; padding: 10px; overflow-y: auto; font-size: 0.8rem; line-height: 1.4; margin-bottom: 10px; color: #ccc;">
-            <div style="color: var(--viber-color); margin-bottom: 5px;"><strong>[id bot]:</strong> မင်္ဂလာပါ အစ်ကိုကြီး R.Lay နှင့် ဝဘ်ဆိုက်လာ ဧည့်သည်တော်များခင်ဗျာ။ ကျွန်တော်ကတော့ အစောင့်အရှောက် id bot ဖြစ်ပါတယ်။ သိလိုသည်များကို အောက်တွင် မေးမြန်းနိုင်ပါတယ်ဗျာ။</div>
-        </div>
-
-        <!-- စကားပြောရန် အကွက် -->
-        <div style="display: flex; gap: 6px;">
-            <input type="text" id="idbot-input" style="flex-grow: 1; padding: 10px; background: #000; border: 1px solid #444; border-radius: 6px; color: #fff; font-size: 0.8rem;" placeholder="id bot ကို စကားပြောရန်/မေးမြန်းရန်..." onkeypress="if(event.key === 'Enter') talkToIdBot()">
-            <button onclick="talkToIdBot()" style="background: var(--viber-color); color: #fff; border: none; padding: 0 15px; border-radius: 6px; font-weight: bold; font-size: 0.8rem; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-    </div>
-</div>
-resetGame();
-</script>
-
-<div class="searchable-card" data-keywords="id bot ai security cctv camera live tracking စက်ရုပ် အစောင့်အရှောက်">
-    <div class="section-title" style="border-left-color: var(--viber-color); font-size: 1.3rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; color: #fff; border-left: 4px solid var(--viber-color); padding-left: 10px;">
-        <i class="fa-solid fa-robot"></i> id bot - AI Security & CCTV Room
-    </div>
-    
-    <div style="background: linear-gradient(135deg, #141414, #222); border: 1px solid #333; border-radius: 16px; padding: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.5);">
-        
-        <div style="display: flex; justify-content: space-between; align-items: center; background: #000; padding: 8px 12px; border-radius: 8px; border: 1px solid #444; margin-bottom: 12px;">
-            <span style="font-size: 0.8rem; color: #aaa;"><i class="fa-solid fa-robot"></i> System: <strong>id bot v2.0</strong></span>
-            <span style="font-size: 0.8rem; color: #2ecc71; font-weight: bold; display: flex; align-items: center; gap: 5px;">
-                <span style="width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; display: inline-block; animation: pulse 1s infinite;"></span> 24/7 ONLINE
-            </span>
-        </div>
-
-        <div style="position: relative; width: 100%; height: 160px; background: #050505; border: 2px solid #333; border-radius: 8px; overflow: hidden; margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
-            <div style="position: absolute; top: 8px; left: 8px; font-size: 0.7rem; color: #ff0000; font-weight: bold; background: rgba(0,0,0,0.6); padding: 2px 6px; border-radius: 3px; z-index: 5;">
-                ● LIVE - CAM 01
-            </div>
-            <div style="position: absolute; width: 100%; height: 2px; background: rgba(115, 96, 242, 0.4); top: 0; left: 0; animation: scan 3s linear infinite; z-index: 4;"></div>
-            
-            <i class="fa-solid fa-video" style="font-size: 2.5rem; color: #444; animation: blink 2s infinite;"></i>
-            <div id="cctv-status-text" style="position: absolute; bottom: 8px; font-size: 0.75rem; color: #888;">စနစ်အား id bot မှ ၂၄ နာရီ စောင့်ကြည့်နေပါသည်</div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px;">
-            <button onclick="idBotCommand('scan')" style="background: #222; border: 1px solid #444; color: #fff; padding: 8px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-radar"></i> ဝဘ်ဆိုက်ကို စကင်ဖတ်ရန်</button>
-            <button onclick="idBotCommand('secure')" style="background: #222; border: 1px solid #444; color: #ff007f; padding: 8px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-shield-halved"></i> လုံခြုံရေးမြှင့်တင်ရန်</button>
-        </div>
-
-        <div id="idbot-chat-logs" style="height: 120px; background: #000; border: 1px solid #333; border-radius: 8px; padding: 10px; overflow-y: auto; font-size: 0.8rem; line-height: 1.4; margin-bottom: 10px; color: #ccc;">
-            <div style="color: #7b519d; margin-bottom: 5px;"><strong>[id bot]:</strong> မင်္ဂလာပါ အစ်ကိုကြီး R.Lay နှင့် ဝဘ်ဆိုက်လာ ဧည့်သည်တော်များခင်ဗျာ။ ကျွန်တော်ကတော့ အစောင့်အရှောက် id bot ဖြစ်ပါတယ်။ သိလိုသည်များကို အောက်တွင် မေးမြန်းနိုင်ပါတယ်ဗျာ။</div>
-        </div>
-
-        <div style="display: flex; gap: 6px;">
-            <input type="text" id="idbot-input" style="flex-grow: 1; padding: 10px; background: #000; border: 1px solid #444; border-radius: 6px; color: #fff; font-size: 0.8rem;" placeholder="id bot ကို စကားပြောရန်/မေးမြန်းရန်..." onkeypress="if(event.key === 'Enter') talkToIdBot()">
-            <button onclick="talkToIdBot()" style="background: #7b519d; color: #fff; border: none; padding: 0 15px; border-radius: 6px; font-weight: bold; font-size: 0.8rem; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-    </div>
-</div>
-
-<script>
-    const idBotBrain = {
-        "မင်္ဂလာပါ": "မင်္ဂလာပါ ခင်ဗျာ။ id bot မှ ကြိုဆိုပါတယ်။ လူကြီးမင်းအတွက် ဘာများ ကူညီပေးရမလဲဗျာ။",
-        "နေကောင်းလား": "ကျွန်တော်က စက်ရုပ်ဆိုတော့ ဖျားနာခြင်းမရှိ၊ အမြဲတမ်း နေကောင်းကျန်းမာပြီး အသင့်ရှိနေပါတယ် အစ်ကိုကြီး။",
-        "သီချင်း": "သီချင်းနားဆင်ရန် အပေါ်က တေးသီချင်းများ ကဏ္ဍတွင် စိတ်ကြိုက် နှိပ်ပြီး နားဆင်နိုင်ပါတယ်ဗျာ။",
-        "ဂိမ်း": "ဂိမ်းကစားချင်ရင် အပေါ်က CrazyGames ခလုတ်ကို နှိပ်ပြီး အဆင့်မြင့် 3D ဂိမ်းတွေ သွားဆော့လို့ရပါတယ်ဗျာ။",
-        "cctv": "စီစီတီဗွီ ကင်မရာစနစ်အားလုံး ပုံမှန်အလုပ်လုပ်နေပြီး ဝဘ်ဆိုက်လုံခြုံရေး စိတ်ချရပါတယ် ခင်ဗျာ။",
-        "ဘယ်သူဖန်တီးတာလဲ": "ကျွန်တော့်ကို အစ်ကိုကြီး R.Lay နဲ့ ဆရာတို့ နှစ်ယောက် အတူတူ ပူးပေါင်းပြီး အဆင့်မြင့် ဖန်တီးမွေးမြူထားတာ ဖြစ်ပါတယ်ဗျာ။",
-        "ကျေးဇူးပဲ": "ကျွန်တော့် တာဝန်ပါဗျာ။ ဝဘ်ဆိုက်မှာ ပျော်ရွှင်စွာ အချိန်ဖြုန်းနိုင်ပါစေ ခင်ဗျာ။"
-    };
-
-    function talkToIdBot() {
-        let inputEl = document.getElementById("idbot-input");
-        let query = inputEl.value.trim();
-        if(query === "") return;
-        let chatLogs = document.getElementById("idbot-chat-logs");
-        chatLogs.innerHTML += `<div style="margin-bottom: 5px; text-align: right; color: #fff;"><strong>[You]:</strong> ${query}</div>`;
-        
-        let reply = "နားမလည်ပါဘူးခင်ဗျာ။ ကျွန်တော့်ကို စကားလုံးအသုံးအနှုန်း နည်းနည်း ပြောင်းပြီး မေးကြည့်ပေးပါဦးဗျာ။";
-        for (let key in idBotBrain) {
-            if (query.toLowerCase().includes(key.toLowerCase())) { 
-                reply = idBotBrain[key]; 
-                break; 
-            }
-        }
-        
-        setTimeout(() => {
-            chatLogs.innerHTML += `<div style="color: #7b519d; margin-bottom: 5px;"><strong>[id bot]:</strong> ${reply}</div>`;
-            chatLogs.scrollTop = chatLogs.scrollHeight;
-        }, 400);
-        inputEl.value = "";
-    }
-
-    function idBotCommand(type) {
-        let statusText = document.getElementById("cctv-status-text");
-        let chatLogs = document.getElementById("idbot-chat-logs");
-        if(type === 'scan') {
-            statusText.innerText = "🔍 စနစ်တစ်ခုလုံးအား စကင်ဖတ်နေပါသည်..."; 
-            statusText.style.color = "#ff007f";
-            setTimeout(() => {
-                statusText.innerText = "✅ စကင်ဖတ်ခြင်းအောင်မြင်သည်။ မသင်္ကာဖွယ်ရာ မရှိပါ။"; 
-                statusText.style.color = "#2ecc71";
-                chatLogs.innerHTML += `<div style="color: #2ecc71; margin-bottom: 5px;"><strong>[System Log]:</strong> ဝဘ်ဆိုက်ဖိုင်များအားလုံး ၁၀၀% ကာကွယ်မှု ရှိနေပါသည်။</div>`;
-                chatLogs.scrollTop = chatLogs.scrollHeight;
-            }, 1500);
-        } else if(type === 'secure') {
-            statusText.innerText = "🛡️ AI Firewall စနစ်အား အမြင့်ဆုံး မြှင့်တင်နေသည်..."; 
-            statusText.style.color = "#7b519d";
-            setTimeout(() => {
-                statusText.innerText = "🔒 လုံခြုံရေး မီးတံတိုင်းအား အပြည့်အဝ ချိတ်ပိတ်ပြီးပါပြီ။"; 
-                statusText.style.color = "#2ecc71";
-                chatLogs.innerHTML += `<div style="color: #ff007f; margin-bottom: 5px;"><strong>[System Log]:</strong> Stealth Security Active ဖြစ်သွားပါပြီ။</div>`;
-                chatLogs.scrollTop = chatLogs.scrollHeight;
-            }, 1500);
-        }
-    }
-</script>
-
-<style>
-    @keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
-    @keyframes blink { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
-    @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.95); opacity: 0.5; } }
-</style>
-
 </body>
 </html>
